@@ -1,0 +1,67 @@
+! urxvt
+!URxvt.font:     xft:DejaVuSansMono NF:size=12
+! URxvt.font:     xft:DejaVuSansMono NF:size=12
+! URxvt.font:     xft:Hack Nerd Font:size=12
+URxvt.font:     xft:FuraCode Nerd Font Mono:size=11
+! URxvt.font:     xft:Hack Nerd Font:minspace=False:size=11
+URxvt.letterSpace: 0
+! URxvt.urxvtdepth:   32
+! urxvt*depth: 32
+URxvt*saveLines: 65535
+URxvt.scrollBar:            false
+URxvt*scrollTtyKeypress:    true
+URxvt*scrollTtyOutput:      fase
+URxvt*scrollWithBuffer:     true
+URxvt*scrollstyle:          plain
+URxvt*secondaryScroll:      true
+URxvt.iso14755:				false
+URxvt.perl-ext-common: default,keyboard-select,clipboard
+! Yankable URLs (no mouse)
+! M-u is Alt+u (Mod1)
+! 
+URxvt.keysum.M-C: perl:clipboard:copy
+URxvt.keysum.M-V: perl:clipboard:paste
+! URxvt.iconFile:             /usr/share/icons/elementary/apps/24/terminal.svg
+
+! Rxvt.keysym.M-Escape: perl:keyboard-select:activate
+! URxvt.keysym.C-s: perl:keyboard-select:search
+! URxvt.keysym.C-u: perl:url-select:select_next
+! URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+! Xft.hintstyle:  hintfull
+Xft.hinting:    true
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.dpi:        96
+Xft.autohint:   0
+
+! Gruvbox theme
+
+! hard contrast: *background: #1d2021
+*background: #1d2021
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2

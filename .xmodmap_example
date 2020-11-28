@@ -1,0 +1,8 @@
+xmodmap - 'remove Mod1 = Alt_R'
+xmodmap - 'add Mod3 = Alt_R'
+
+xmodmap - 'remove Mod4 = Super_R'
+xmodmap - 'add Mod3 = Super_R'
+
+xmodmap - 'remove Mod3 = Super_R'
+xmodmap - 'add Mod4 = Super_R'
