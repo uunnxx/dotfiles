@@ -12,6 +12,9 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
+xset +fp /home/unx/.local/share/fonts
+xset fp rehash
+
 DEFAULT_SESSION='i3 --shmlog-size 0'
 
 # merge in defaults and keymaps
@@ -61,3 +64,6 @@ get_session(){
 }
 
 exec $(get_session)
+
+
+

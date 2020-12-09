@@ -9,6 +9,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export BW_SESSION="y9tHKlcsS7uhPoaE2Ojt4uM4/8ays60YSj+Dk2dFBXWtQtDOOUDbwqb3SLJaaqwuFYFyKuaF9bovVvN5rYWIow=="
 
+export TW
+
 # For python
 export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING="UTF-8"
@@ -31,7 +33,7 @@ export BROWSER=google-chrome-stable
 export PAGER="bat"
 export TERM="xterm-256color"
 
-export TW_OAUTH=x2z4xs4bcf88yq8aeplrd49rxq3lv4
+export TW_OAUTH=7e9nmvl11d0uv7m91ip7gxjxr8j2j8
 
 # Just give us more space for history
 # export HISTFILE="$HOME/.zsh_history"
@@ -44,11 +46,11 @@ setopt hist_ignore_space
 # export MANPAGER="nvim -c set ft=man -"
 
 
-ZSH_THEME="afowler"
+ZSH_THEME="afowler_custom"
 ZSH_DISABLE_COMPFIX=true
 
 plugins=(
-  git 
+  git
   zsh-syntax-highlighting
   vi-mode
   command-not-found
@@ -59,9 +61,7 @@ plugins=(
   colored-man-pages
 #  colorize
   fd
-  # golang
   asdf
-#  crystal
   ruby
   bundler
   fzf-tab
@@ -107,7 +107,7 @@ bindkey '^ ' autosuggest-accept
 # unalias run-help
 autoload run-help
 
-[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+[[ -s "/home/unx/.grc/grc.zsh" ]] && source /home/unx/.grc/grc.zsh
 
 # Motivation reminder
 # echo "2020 12 31" | awk '{dt=mktime($0 " 00 00 00")-systime(); print "There are " int(dt/86400/7) " weeks left until the year ends. What will you do?";}'
@@ -115,7 +115,7 @@ autoload run-help
 
 # vi-mode keymaps:
 
-# allow ^H ^L for navigate history 
+# allow ^H ^L for navigate history
 # bindkey '^H' up-history
 # bindkey '^L' down-history
 

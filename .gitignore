@@ -1,0 +1,10 @@
+/*
+!.gitignore
+!.alias*
+!.zshrc
+!.xinput*
+!.xinitrc*
+!.vimrc*
+!.X*
+!.xmod*
+!README.md

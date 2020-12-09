@@ -28,7 +28,7 @@ alias ll='ls -lh --color=yes'
 alias md="mkdir -pv"
 
 alias info='info --vi-keys'
-alias grep="grep --color=auto"
+alias grep="grep -i --color=auto"
 alias fd=fdfind
 
 alias df="df -h"
@@ -75,6 +75,10 @@ alias js=js68
 
 alias mm=vifm
 
+alias ml=multipass
+
+alias j="jobs -l"
+
 
 
 # alias ipaddr="grc ip addr"
@@ -91,3 +95,5 @@ alias mm=vifm
 # alias dokinfo"docker info"
 
 alias gentags="ripper-tags -R --exclude=.git"
+
+alias bonsai="cbonsai -ilL60"
