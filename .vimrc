@@ -14,5 +14,3 @@ nmap R "_dd
 vmap R "_d
 
 set mouse=a
-
-
