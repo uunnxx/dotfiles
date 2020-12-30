@@ -46,7 +46,8 @@ setopt hist_ignore_space
 # export MANPAGER="nvim -c set ft=man -"
 
 
-ZSH_THEME="afowler_custom"
+# ZSH_THEME="afowler_custom"
+ZSH_THEME="afowler"
 ZSH_DISABLE_COMPFIX=true
 
 plugins=(

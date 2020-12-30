@@ -19,6 +19,8 @@ alias agu="sudo apt update"
 alias agug="sudo apt upgrade"
 alias aguu="sudo apt update && sudo apt upgrade"
 
+alias aoeu=asdf
+
 # ls
 alias ls='ls --color=yes'
 alias la='ls -lAh --color=yes'
@@ -70,8 +72,11 @@ alias batv="fzf --preview 'bat --color \"always\" {}'"
 alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
+
 alias yl=youtube-dl
-alias js=js68
+alias ylp='youtube-dl --yes-playlist'
+
+# alias js=js68
 
 alias mm=vifm
 
@@ -97,3 +102,5 @@ alias j="jobs -l"
 alias gentags="ripper-tags -R --exclude=.git"
 
 alias bonsai="cbonsai -ilL60"
+
+alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/half/Documents"
