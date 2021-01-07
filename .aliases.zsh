@@ -62,8 +62,12 @@ alias note="jupyter notebook"
 alias tran="trans -l ru"
 alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1 | tail -n 1)) && eval $TF_CMD && print -s $TF_CMD'
 
-alias copy="xclip -selection clipboard"
-# Exapmple of use: ls | copy
+alias xpaste="xclip -o"
+alias xcopy="xclip -i"
+# Exapmple of use: 
+# ls | xcopy
+# xpaste > input.txt
+
 
 alias openn='xdg-open &>/dev/null'
 
