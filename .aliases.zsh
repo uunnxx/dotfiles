@@ -21,6 +21,8 @@ alias aguu="sudo apt update && sudo apt upgrade"
 
 alias aoeu=asdf
 
+alias eee=exercism
+
 # ls
 alias ls='ls --color=yes'
 alias la='ls -lAh --color=yes'
@@ -48,7 +50,7 @@ alias ivm=nvim
 alias vmi=nvim
 alias v=nvim
 
-alias do_path='export PATH="${PWD}:${PATH}"'
+alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
 
 alias rzsh="source ~/.zshrc"
@@ -64,7 +66,7 @@ alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(ali
 
 alias xpaste="xclip -o"
 alias xcopy="xclip -i"
-# Exapmple of use: 
+# Exapmple of use:
 # ls | xcopy
 # xpaste > input.txt
 

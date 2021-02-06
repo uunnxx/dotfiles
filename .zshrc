@@ -66,6 +66,7 @@ plugins=(
   ruby
   bundler
   fzf-tab
+  pip
 )
 
 source <(cod init $$ zsh)
