@@ -28,7 +28,6 @@ alias ls='ls --color=yes'
 alias la='ls -lAh --color=yes'
 alias ll='ls -lh --color=yes'
 
-# use take() when you need after creating switch to
 alias md="mkdir -pv"
 
 alias info='info --vi-keys'
@@ -48,7 +47,6 @@ alias :q="exit"
 alias vim=nvim
 alias ivm=nvim
 alias vmi=nvim
-alias v=nvim
 
 alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
@@ -73,7 +71,7 @@ alias xcopy="xclip -i"
 
 alias openn='xdg-open &>/dev/null'
 
-alias merge="xrdb -merge /home/unx/.Xresources"
+# alias merge="xrdb -merge /home/unx/.Xresources"
 alias batv="fzf --preview 'bat --color \"always\" {}'"
 alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
@@ -110,3 +108,6 @@ alias gentags="ripper-tags -R --exclude=.git"
 alias bonsai="cbonsai -ilL60"
 
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/half/Documents"
+
+
+alias mpvs="mpv --shuffle --no-resume-playback --input-ipc-server=$HOME/.mpv/socket"

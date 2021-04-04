@@ -7,7 +7,9 @@ URxvt.font:     xft:FuraCode Nerd Font Mono:size=12
 ! URxvt.font:     xft:Hack Nerd Font:minspace=False:size=12
 URxvt.letterSpace: 0
 ! URxvt.urxvtdepth:   32
-! urxvt*depth: 32
+urxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+
 URxvt*saveLines: 65535
 URxvt.scrollBar:            false
 URxvt*scrollTtyKeypress:    true
