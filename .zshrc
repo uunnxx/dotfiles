@@ -15,8 +15,8 @@ export TW
 export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING="UTF-8"
 
-export TERM=screen-256color
-export R2PM_DBDIR="$HOME/apps/radare2/radare2-pm/db"
+# export TERM=screen-256color
+# export R2PM_DBDIR="$HOME/apps/radare2/radare2-pm/db"
 
 export FZF_BASE=/usr/bin/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -31,7 +31,8 @@ export ZSH="/home/unx/.oh-my-zsh"
 export EDITOR=nvim
 export BROWSER=google-chrome-stable
 export PAGER="bat"
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
+export TERM="rxvt-256color"
 
 export TW_OAUTH=7e9nmvl11d0uv7m91ip7gxjxr8j2j8
 

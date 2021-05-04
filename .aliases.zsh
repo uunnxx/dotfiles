@@ -60,6 +60,9 @@ alias evim="nvim ~/.config/nvim/init.vim"
 alias note="jupyter notebook"
 
 alias tran="trans -l ru"
+alias tranej="trans -I :ja en:"
+alias traner="trans -I :ru en:"
+alias tranje="trans -I :en ja:"
 alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(alias) thefuck $(fc -ln -1 | tail -n 1)) && eval $TF_CMD && print -s $TF_CMD'
 
 alias xpaste="xclip -o"
@@ -110,4 +113,16 @@ alias bonsai="cbonsai -ilL60"
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/half/Documents"
 
 
-alias mpvs="mpv --shuffle --no-resume-playback --input-ipc-server=$HOME/.mpv/socket"
+alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
+alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
+
+alias mpvw="mpv --wid=\$WINDOWID"
+
+alias notes="cd ~/NNN && nvim"
+
+alias jl='julia'
+
+alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
+alias cam_adbfhd='droidcam-cli -size=1280x720 4747'
+alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
+alias cam_fhd='droidcam-cli -size=1280x720 192.168.0.11 4747'
