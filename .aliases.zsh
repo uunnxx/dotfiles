@@ -81,7 +81,9 @@ alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
 
 alias yl=youtube-dl
-alias ylp='youtube-dl --yes-playlist'
+# alias yl='youtube-dl -o "/home/unx/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylp='youtube-dl --yes-playlist -o "/home/unx/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylpc='youtube-dl --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
 
 # alias js=js68
 
@@ -118,7 +120,7 @@ alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-serve
 
 alias mpvw="mpv --wid=\$WINDOWID"
 
-alias notes="cd ~/NNN && nvim"
+# alias notes="cd ~/NNN && nvim"
 
 alias jl='julia'
 
@@ -126,3 +128,9 @@ alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
 alias cam_adbfhd='droidcam-cli -size=1280x720 4747'
 alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 alias cam_fhd='droidcam-cli -size=1280x720 192.168.0.11 4747'
+
+alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans Mono Bold"'
+alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
+
+alias neofetch='neofetch --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
+alias ghci='ghci 2>&1 | HsColour -tty'

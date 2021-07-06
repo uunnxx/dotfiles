@@ -3,9 +3,16 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'https://github.com/morhetz/gruvbox'
 
+Plug 'morhetz/gruvbox'
+Plug 'dikiaap/minimalist'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'mengelbrecht/lightline-bufferline'
 
-" Plug 'ekickx/clipboard-image.nvim'
+Plug 'majutsushi/tagbar'
 
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -92,4 +99,3 @@ set expandtab
 " ********************************************************************
 " END OF GENERAL SECTION
 " ********************************************************************
-

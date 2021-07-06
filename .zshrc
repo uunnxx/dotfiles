@@ -4,19 +4,22 @@ export PATH="$HOME/.asdf/installs/rust/1.48.0/bin:$PATH"
 export PATH="$HOME/.asdf/installs/python/3.9.0/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.r2env/bin:$PATH"
 
 . $HOME/.asdf/asdf.sh
 
 export BW_SESSION="y9tHKlcsS7uhPoaE2Ojt4uM4/8ays60YSj+Dk2dFBXWtQtDOOUDbwqb3SLJaaqwuFYFyKuaF9bovVvN5rYWIow=="
 
-export TW
-
 # For python
 export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING="UTF-8"
 
-# export TERM=screen-256color
 # export R2PM_DBDIR="$HOME/apps/radare2/radare2-pm/db"
+export R2PM_PLUGDIR=/home/unx/.radare2/plugins
+export R2PM_DBDIR=/home/unx/.radare2/r2pm/db
+export R2PM_GITDIR=/home/unx/.radare2/r2pm/git
+
+
 
 export FZF_BASE=/usr/bin/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -31,10 +34,11 @@ export ZSH="/home/unx/.oh-my-zsh"
 export EDITOR=nvim
 export BROWSER=google-chrome-stable
 export PAGER="bat"
+# export TERM=screen-256color
 # export TERM="xterm-256color"
 export TERM="rxvt-256color"
 
-export TW_OAUTH=7e9nmvl11d0uv7m91ip7gxjxr8j2j8
+# export TW_OAUTH=7e9nmvl11d0uv7m91ip7gxjxr8j2j8
 
 # Just give us more space for history
 # export HISTFILE="$HOME/.zsh_history"
@@ -73,8 +77,6 @@ plugins=(
 source <(cod init $$ zsh)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases.zsh
-
-
 
 
 # Colors for man pages
@@ -138,3 +140,9 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bitcomplete bit
+
+PATH="/home/unx/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/unx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/unx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/unx/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/unx/perl5"; export PERL_MM_OPT;
