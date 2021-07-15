@@ -2,6 +2,7 @@ alias to=cd
 alias nrc="nvim ~/.config/nvim/init.vim"
 alias zrc="nvim ~/.zshrc"
 alias tt=fg
+alias j="jobs -l"
 
 alias __="sudo \$(fc -ln -1)"
 alias _=sudo
@@ -41,7 +42,7 @@ alias duu="du --max-depth=1"
 alias da="date '+%A, %B %d, %Y [%T]'"
 alias hist="history | grep"
 
-alias :q="exit"
+alias q="exit"
 
 # alias ed=nvim
 alias vim=nvim
@@ -91,9 +92,6 @@ alias mm=vifm
 
 alias ml=multipass
 
-alias j="jobs -l"
-
-
 
 # alias ipaddr="grc ip addr"
 # alias iplink="grc ip link"
@@ -101,12 +99,12 @@ alias j="jobs -l"
 # alias ipneighbor="grc ip neighbor"
 # alias ip="grc ip"
 #
-# alias dokps"docker ps"
-# alias dokimg"docker images"
-# alias doksearch"docker search"
-# alias dokls"docker ls"
-# alias doknls"docker network ls"
-# alias dokinfo"docker info"
+# alias docps"docker ps"
+# alias docimg"docker images"
+# alias docsearch"docker search"
+# alias docls"docker ls"
+# alias docnls"docker network ls"
+# alias docinfo"docker info"
 
 alias gentags="ripper-tags -R --exclude=.git"
 
@@ -115,12 +113,9 @@ alias bonsai="cbonsai -ilL60"
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/half/Documents"
 
 
-alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
 alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
-
+alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
 alias mpvw="mpv --wid=\$WINDOWID"
-
-# alias notes="cd ~/NNN && nvim"
 
 alias jl='julia'
 
@@ -134,3 +129,9 @@ alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono
 
 alias neofetch='neofetch --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
 alias ghci='ghci 2>&1 | HsColour -tty'
+
+alias gcdeb='gcc -g -fverbose-asm -masm=intel -S'
+alias disas='objdump -drwCS -Mintel'
+
+
+alias manj='man --locale=ja'

@@ -19,6 +19,9 @@ export R2PM_PLUGDIR=/home/unx/.radare2/plugins
 export R2PM_DBDIR=/home/unx/.radare2/r2pm/db
 export R2PM_GITDIR=/home/unx/.radare2/r2pm/git
 
+# RETDEC
+export RID=/home/unx/apps/retdec/bin
+
 
 
 export FZF_BASE=/usr/bin/fzf
