@@ -42,6 +42,7 @@ alias duu="du --max-depth=1"
 alias da="date '+%A, %B %d, %Y [%T]'"
 alias hist="history | grep"
 
+alias :q="exit"
 alias q="exit"
 
 # alias ed=nvim
@@ -128,7 +129,7 @@ alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans M
 alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
 
 alias neofetch='neofetch --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
-alias ghci='ghci 2>&1 | HsColour -tty'
+# alias ghci='ghci 2>&1 | HsColour -tty'
 
 alias gcdeb='gcc -g -fverbose-asm -masm=intel -S'
 alias disas='objdump -drwCS -Mintel'
