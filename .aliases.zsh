@@ -3,6 +3,7 @@ alias nrc="nvim ~/.config/nvim/init.vim"
 alias zrc="nvim ~/.zshrc"
 alias tt=fg
 alias j="jobs -l"
+alias rm="rm -I"
 
 alias __="sudo \$(fc -ln -1)"
 alias _=sudo
@@ -128,7 +129,7 @@ alias cam_fhd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans Mono Bold"'
 alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
 
-alias neofetch='neofetch --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
+alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
 # alias ghci='ghci 2>&1 | HsColour -tty'
 
 alias gcdeb='gcc -g -fverbose-asm -masm=intel -S'

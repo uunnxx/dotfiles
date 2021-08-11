@@ -1,26 +1,21 @@
 . $HOME/.asdf/asdf.sh
 # export PATH="$HOME/.asdf/installs/golang/1.14.3/packages/bin:$PATH"
-export PATH="$HOME/.asdf/installs/rust/1.48.0/bin:$PATH"
-export PATH="$HOME/.asdf/installs/python/3.9.0/bin:$PATH"
+export PATH="$HOME/.asdf/installs/rust/1.54.0/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.r2env/bin:$PATH"
-
-. $HOME/.asdf/asdf.sh
-
-export BW_SESSION="y9tHKlcsS7uhPoaE2Ojt4uM4/8ays60YSj+Dk2dFBXWtQtDOOUDbwqb3SLJaaqwuFYFyKuaF9bovVvN5rYWIow=="
 
 # For python
 export PYTHONSTARTUP="${HOME}/.pyrc"
 export PYTHONIOENCODING="UTF-8"
 
 # export R2PM_DBDIR="$HOME/apps/radare2/radare2-pm/db"
-export R2PM_PLUGDIR=/home/unx/.radare2/plugins
-export R2PM_DBDIR=/home/unx/.radare2/r2pm/db
-export R2PM_GITDIR=/home/unx/.radare2/r2pm/git
+export R2PM_PLUGDIR=$HOME/.radare2/plugins
+export R2PM_DBDIR=$HOME/.radare2/r2pm/db
+export R2PM_GITDIR=$HOME/.radare2/r2pm/git
 
 # RETDEC
-export RID=/home/unx/apps/retdec/bin
+export RID=$HOME/apps/retdec/bin
 
 
 
@@ -33,13 +28,13 @@ export LS_COLORS="rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 
-export ZSH="/home/unx/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export BROWSER=google-chrome-stable
 export PAGER="bat"
 # export TERM=screen-256color
-# export TERM="xterm-256color"
-export TERM="rxvt-256color"
+export TERM="xterm-256color"
+# export TERM="rxvt-256color"
 
 # export TW_OAUTH=7e9nmvl11d0uv7m91ip7gxjxr8j2j8
 
@@ -115,7 +110,7 @@ bindkey '^ ' autosuggest-accept
 # unalias run-help
 autoload run-help
 
-[[ -s "/home/unx/.grc/grc.zsh" ]] && source /home/unx/.grc/grc.zsh
+[[ -s "$HOME/.grc/grc.zsh" ]] && source $HOME/.grc/grc.zsh
 
 # Motivation reminder
 # echo "2020 12 31" | awk '{dt=mktime($0 " 00 00 00")-systime(); print "There are " int(dt/86400/7) " weeks left until the year ends. What will you do?";}'
@@ -144,13 +139,13 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bitcomplete bit
 
-PATH="/home/unx/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/unx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/unx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/unx/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/unx/perl5"; export PERL_MM_OPT;
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 
 # Haskell ghcup
 # update stack via ghcup tui and not via `stack update`
-source /home/unx/.ghcup/env
+###################source $HOME/.ghcup/env
