@@ -35,6 +35,7 @@ alias md="mkdir -pv"
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
 alias fd=fdfind
+alias bat=batcat
 
 alias df="df -h"
 alias du="du -c -h"
@@ -84,29 +85,15 @@ alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
 
 alias yl=youtube-dl
-# alias yl='youtube-dl -o "/home/unx/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
-alias ylp='youtube-dl --yes-playlist -o "/home/unx/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+# alias yl='youtube-dl -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylp='youtube-dl --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
 alias ylpc='youtube-dl --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
-
-# alias js=js68
+# apt install libmozjs-78-dev
+alias js=js78
 
 alias mm=vifm
 
 alias ml=multipass
-
-
-# alias ipaddr="grc ip addr"
-# alias iplink="grc ip link"
-# alias iproute="grc ip route"
-# alias ipneighbor="grc ip neighbor"
-# alias ip="grc ip"
-#
-# alias docps"docker ps"
-# alias docimg"docker images"
-# alias docsearch"docker search"
-# alias docls"docker ls"
-# alias docnls"docker network ls"
-# alias docinfo"docker info"
 
 alias gentags="ripper-tags -R --exclude=.git"
 
@@ -122,9 +109,9 @@ alias mpvw="mpv --wid=\$WINDOWID"
 alias jl='julia'
 
 alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
-alias cam_adbfhd='droidcam-cli -size=1280x720 4747'
+alias cam_adbhd='droidcam-cli -size=1280x720 4747'
+alias cam_fhd='droidcam-cli -size=1920x1080 192.168.0.11 4747'
 alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
-alias cam_fhd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 
 alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans Mono Bold"'
 alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
@@ -135,5 +122,9 @@ alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3
 alias gcdeb='gcc -g -fverbose-asm -masm=intel -S'
 alias disas='objdump -drwCS -Mintel'
 
-
+# https://dyn.manpages.debian.org/bullseye/manpages-ja-dev/index.html
 alias manj='man --locale=ja'
+
+alias server="ruby -run -e httpd . -p 8080"
+
+alias date="dunstify -u low '$(date)'"
