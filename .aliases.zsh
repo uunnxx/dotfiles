@@ -127,4 +127,8 @@ alias manj='man --locale=ja'
 
 alias server="ruby -run -e httpd . -p 8080"
 
-alias date="dunstify -u low '$(date)'"
+# alias date="dunstify -u low '$(date)'"
+
+
+alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings"
+alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings"

@@ -36,13 +36,6 @@ export PAGER="bat"
 export TERM="xterm-256color"
 # export TERM="rxvt-256color"
 
-# export TW_OAUTH=7e9nmvl11d0uv7m91ip7gxjxr8j2j8
-
-# Just give us more space for history
-# export HISTFILE="$HOME/.zsh_history"
-# export HISTSIZE=99999999
-# export SAVEHIST=$HISTSIZE
-
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
 
