@@ -35,7 +35,7 @@ alias md="mkdir -pv"
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
 alias fd=fdfind
-alias bat=batcat
+# alias bat=batcat
 
 alias df="df -h"
 alias du="du -c -h"
