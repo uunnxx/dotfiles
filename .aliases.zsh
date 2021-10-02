@@ -46,6 +46,7 @@ alias hist="history | grep"
 
 alias :q="exit"
 alias q="exit"
+alias qq="exit"
 
 # alias ed=nvim
 alias vim=nvim
