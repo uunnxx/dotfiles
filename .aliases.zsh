@@ -23,19 +23,28 @@ alias aguu="sudo apt update && sudo apt upgrade"
 
 alias aoeu=asdf
 
-alias eee=exercism
+alias redO='redshift -x && redshift -O 3500'
+alias redX='redshift -x'
+
+# alias eee=exercism
 
 # ls
-alias ls='ls --color=yes'
-alias la='ls -lAh --color=yes'
-alias ll='ls -lh --color=yes'
+# alias ls='ls --color=yes'
+# alias la='ls -lAh --color=yes'
+# alias ll='ls -lh --color=yes'
+
+alias l='lsd -lAh'
+alias ll='lsd -lh'
+alias ls='lsd'
+alias la='lsd -lah'
+
+alias fos='fossil'
 
 alias md="mkdir -pv"
 
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
 alias fd=fdfind
-# alias bat=batcat
 
 alias df="df -h"
 alias du="du -c -h"
@@ -47,6 +56,10 @@ alias hist="history | grep"
 alias :q="exit"
 alias q="exit"
 alias qq="exit"
+
+alias tis='tig status'
+alias til='tig log'
+alias tib='tig blame -C'
 
 # alias ed=nvim
 alias vim=nvim
@@ -85,10 +98,17 @@ alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
 
-alias yl=youtube-dl
+# alias yl=youtube-dl
+alias yl=yt-dlp
 # alias yl='youtube-dl -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
-alias ylp='youtube-dl --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
-alias ylpc='youtube-dl --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+# alias ylp='youtube-dl --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylp='yt-dlp --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+# alias ylpc='youtube-dl --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylpc='yt-dlp --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+
+alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
+
+
 # apt install libmozjs-78-dev
 alias js=js78
 
@@ -128,8 +148,14 @@ alias manj='man --locale=ja'
 
 alias server="ruby -run -e httpd . -p 8080"
 
+alias cr='crystal'
+alias cri='crystal init'
+
 # alias date="dunstify -u low '$(date)'"
 
 
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings"
 alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings"
+
+
+alias lofi="mpvw https://www.youtube.com/watch\?v\=5qap5aO4i9A --no-resume-playback"
