@@ -159,3 +159,7 @@ alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-o
 
 
 alias lofi="mpvw https://www.youtube.com/watch\?v\=5qap5aO4i9A --no-resume-playback"
+
+
+alias iI=ipython
+alias ii=ptpython
