@@ -1,12 +1,17 @@
-alias to=cd
+alias to='cd'
 alias nrc="nvim ~/.config/nvim/init.vim"
 alias zrc="nvim ~/.zshrc"
-alias tt=fg
+alias tt='fg'
+alias t='todo'
+alias h='dijo'
 alias j="jobs -l"
 alias rm="rm -I"
+alias b="bb pdf djvu"
+alias B="cd /mnt/hdd/Documents/"
+alias BB="cd /mnt/hdd/Documents/Books"
 
 alias __="sudo \$(fc -ln -1)"
-alias _=sudo
+alias _='sudo'
 
 alias di="sudo dpkg -i"
 alias ag="sudo apt"
@@ -77,7 +82,8 @@ alias evim="nvim ~/.config/nvim/init.vim"
 
 alias note="jupyter notebook"
 
-alias tran="trans -l ru"
+
+alias tran="trans -d -t ru -I"
 alias tranej="trans -I :ja en:"
 alias traner="trans -I :ru en:"
 alias tranje="trans -I :en ja:"
@@ -110,11 +116,11 @@ alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader
 
 
 # apt install libmozjs-78-dev
-alias js=js78
+alias js='js78'
 
-alias mm=vifm
+alias mm='vifm'
 
-alias ml=multipass
+alias ml='multipass'
 
 alias gentags="ripper-tags -R --exclude=.git"
 
@@ -151,6 +157,8 @@ alias server="ruby -run -e httpd . -p 8080"
 alias cr='crystal'
 alias cri='crystal init'
 
+alias py='python'
+
 # alias date="dunstify -u low '$(date)'"
 
 
@@ -161,5 +169,8 @@ alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-o
 alias lofi="mpvw https://www.youtube.com/watch\?v\=5qap5aO4i9A --no-resume-playback"
 
 
-alias iI=ipython
-alias ii=ptpython
+alias iI='ipython'
+alias ii='ptpython'
+
+
+
