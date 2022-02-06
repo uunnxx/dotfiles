@@ -7,8 +7,9 @@ alias h='dijo'
 alias j="jobs -l"
 alias rm="rm -I"
 alias b="bb pdf djvu"
-alias B="cd /mnt/hdd/Documents/"
-alias BB="cd /mnt/hdd/Documents/Books"
+alias B="fzf_books"
+alias D="cd /mnt/hdd/Documents/Books"
+alias DD="cd /mnt/hdd/Documents/"
 
 alias __="sudo \$(fc -ln -1)"
 alias _='sudo'
@@ -43,9 +44,13 @@ alias ll='lsd -lh'
 alias ls='lsd'
 alias la='lsd -lah'
 
+# alias l='exa -lhFHg --icons'
+# alias ll='exa -lahFHg --icons'
+# alias ls='exa --icons'
+
 alias fos='fossil'
 
-alias md="mkdir -pv"
+alias mdir="mkdir -pv"
 
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
