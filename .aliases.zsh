@@ -11,6 +11,12 @@ alias B="fzf_books"
 alias D="cd /mnt/hdd/Documents/Books"
 alias DD="cd /mnt/hdd/Documents/"
 
+alias warpc='warp-cli connect'
+alias warpd='warp-cli disconnect'
+alias warps='warp-cli status'
+
+alias ch="tldr \$(tldr -l | fzf)"
+
 alias __="sudo \$(fc -ln -1)"
 alias _='sudo'
 
@@ -72,6 +78,7 @@ alias til='tig log'
 alias tib='tig blame -C'
 
 # alias ed=nvim
+alias vi=/usr/bin/vim
 alias vim=nvim
 alias ivm=nvim
 alias vmi=nvim
