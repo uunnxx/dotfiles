@@ -58,6 +58,8 @@ alias fos='fossil'
 
 alias mdir="mkdir -pv"
 
+alias md='/home/baka/.asdf/shims/md'
+
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
 alias fd=fdfind
@@ -82,6 +84,8 @@ alias vi=/usr/bin/vim
 alias vim=nvim
 alias ivm=nvim
 alias vmi=nvim
+
+alias cat='bat --theme base16'
 
 alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
@@ -120,9 +124,9 @@ alias lnn="xrandr --output DVI-D-0 --brightness"
 alias yl=yt-dlp
 # alias yl='youtube-dl -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
 # alias ylp='youtube-dl --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
-alias ylp='yt-dlp --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylp='yt-dlp --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 # alias ylpc='youtube-dl --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
-alias ylpc='yt-dlp --yes-playlist -o "./%(channel)s/%(playlist)s/%(title)s-%(id)s.%(ext)s"'
+alias ylpc='yt-dlp --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 
 alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 
