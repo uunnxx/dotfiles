@@ -18,6 +18,7 @@ alias warps='warp-cli status'
 alias ch="tldr \$(tldr -l | fzf)"
 
 alias __="sudo \$(fc -ln -1)"
+alias please="sudo \$(fc -ln -1)"
 alias _='sudo'
 
 alias di="sudo dpkg -i"
@@ -35,6 +36,8 @@ alias aguu="sudo apt update && sudo apt upgrade"
 
 alias aoeu=asdf
 
+alias rr=ranger
+
 alias redO='redshift -x && redshift -O 3500'
 alias redX='redshift -x'
 
@@ -45,10 +48,10 @@ alias redX='redshift -x'
 # alias la='ls -lAh --color=yes'
 # alias ll='ls -lh --color=yes'
 
-alias l='lsd -lAh'
-alias ll='lsd -lh'
-alias ls='lsd'
-alias la='lsd -lah'
+alias l='lsd -lAh --group-dirs first'
+alias ll='lsd -lh --group-dirs first'
+alias ls='lsd --group-dirs first'
+alias la='lsd -lah --group-dirs first'
 
 # alias l='exa -lhFHg --icons'
 # alias ll='exa -lahFHg --icons'
@@ -112,7 +115,8 @@ alias xcopy="xclip -i"
 # xpaste > input.txt
 
 
-alias openn='xdg-open &>/dev/null'
+# alias openn='xdg-open &>/dev/null'
+alias O='xdg-open &>/dev/null'
 
 # alias merge="xrdb -merge /home/unx/.Xresources"
 alias batv="fzf --preview 'bat --color \"always\" {}'"
@@ -159,7 +163,8 @@ alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans Mono Bold"'
 alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
 
-alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
+# alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
+alias neofetch='neofetch --ascii ~/drafts/ussr --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
 # alias ghci='ghci 2>&1 | HsColour -tty'
 
 alias gcdeb='gcc -g -fverbose-asm -masm=intel -S'
