@@ -20,6 +20,7 @@ alias ch="tldr \$(tldr -l | fzf)"
 alias __="sudo \$(fc -ln -1)"
 alias please="sudo \$(fc -ln -1)"
 alias _='sudo'
+alias ctl='systemctl'
 
 alias di="sudo dpkg -i"
 alias ag="sudo apt"
@@ -38,8 +39,10 @@ alias aoeu=asdf
 
 alias rr=ranger
 
-alias redO='redshift -x && redshift -O 3500'
-alias redX='redshift -x'
+# Redshift
+alias rday="redshift -x -m randr && redshift -m randr -O 3500 -b 0.9"
+alias rnight="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8"
+alias roff="redshift -x -m randr"
 
 # alias eee=exercism
 
@@ -119,7 +122,7 @@ alias xcopy="xclip -i"
 alias O='xdg-open &>/dev/null'
 
 # alias merge="xrdb -merge /home/unx/.Xresources"
-alias batv="fzf --preview 'bat --color \"always\" {}'"
+alias batv="fzf --preview 'bat --theme base16 --color \"always\" {}'"
 alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
