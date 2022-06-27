@@ -2,7 +2,7 @@ alias to='cd'
 alias nrc="nvim ~/.config/nvim/init.vim"
 alias zrc="nvim ~/.zshrc"
 alias tt='fg'
-alias t='todo'
+# alias t='todo'
 alias h='dijo'
 alias j="jobs -l"
 alias rm="rm -I"
@@ -41,10 +41,11 @@ alias rr=ranger
 
 # Redshift
 alias rday="redshift -x -m randr && redshift -m randr -O 3500 -b 0.9"
+alias rdayq="redshift -x -m randr && redshift -m randr -O 3500 -b 0.9 && exit"
 alias rnight="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8"
+alias rnightq="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8 && exit"
 alias roff="redshift -x -m randr"
-
-# alias eee=exercism
+alias roffq="redshift -x -m randr && exit"
 
 # ls
 # alias ls='ls --color=yes'
@@ -91,7 +92,7 @@ alias vim=nvim
 alias ivm=nvim
 alias vmi=nvim
 
-alias cat='bat --theme base16'
+alias cat='bat --theme base16 --color=auto'
 
 alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
@@ -122,7 +123,7 @@ alias xcopy="xclip -i"
 alias O='xdg-open &>/dev/null'
 
 # alias merge="xrdb -merge /home/unx/.Xresources"
-alias batv="fzf --preview 'bat --theme base16 --color \"always\" {}'"
+alias batv="fzf --preview 'bat --theme base16 --color \"auto\" {}'"
 alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
