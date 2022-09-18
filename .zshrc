@@ -1,7 +1,7 @@
 . $HOME/.asdf/asdf.sh
-# export PATH="$HOME/.asdf/installs/golang/1.14.3/packages/bin:$PATH"
 export PATH="$HOME/.asdf/installs/rust/1.54.0/bin:$PATH"
-
+export PATH="$HOME/.asdf/installs/rust/1.55.0/bin:$PATH"
+export PATH="$HOME/apps/elixir-ls/release:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.r2env/bin:$PATH"
 
@@ -17,8 +17,6 @@ export R2PM_GITDIR=$HOME/.radare2/r2pm/git
 # RETDEC
 export RID=$HOME/apps/retdec/bin
 
-
-
 export FZF_BASE=/usr/bin/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -31,10 +29,8 @@ export ARCHFLAGS="-arch x86_64"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
 export BROWSER=google-chrome-stable
-export PAGER="bat"
-# export TERM=screen-256color
+export PAGER="bat -p"
 export TERM="xterm-256color"
-# export TERM="rxvt-256color"
 
 setopt hist_ignore_all_dups
 setopt hist_ignore_space
@@ -47,22 +43,22 @@ ZSH_THEME="afowler"
 ZSH_DISABLE_COMPFIX=true
 
 plugins=(
-  git
-  zsh-syntax-highlighting
-  vi-mode
-  command-not-found
-#  dirhistory # alt + up, down, right, left
-  fzf
-#  globalias
-  zsh-autosuggestions
-  colored-man-pages
-#  colorize
-  fd
-  asdf
-  ruby
-  bundler
-  fzf-tab
-  pip
+    git
+    zsh-syntax-highlighting
+    vi-mode
+    command-not-found
+    fzf
+    fzf-tab
+    zsh-autosuggestions
+    colored-man-pages
+    fd
+    asdf
+    ruby
+    bundler
+    pip
+    fossil
+    mix-fast
+    docker
 )
 
 source <(cod init $$ zsh)
@@ -70,31 +66,11 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases.zsh
 
 
-# Colors for man pages
-if [ "$TERM" = "linux" ]; then
-  echo -en "\e]P0 282828" #black
-  echo -en "\e]P8 928374" #darkgrey
-  echo -en "\e]P1 CC241D" #darkred
-  echo -en "\e]P9 FB4934" #red
-  echo -en "\e]P2 98971A" #darkgreen
-  echo -en "\e]PA B8BB26" #green
-  echo -en "\e]P3 D79921" #brown
-  echo -en "\e]PB FABD2F" #yellow
-  echo -en "\e]P4 458588" #darkblue
-  echo -en "\e]PC 83A598" #blue
-  echo -en "\e]P5 B16286" #darkmagenta
-  echo -en "\e]PD D3869B" #magenta
-  echo -en "\e]P6 689D6A" #darkcyan
-  echo -en "\e]PE 8EC07C" #cyan
-  echo -en "\e]P7 A89984" #lightgrey
-  echo -en "\e]PF EBDBB2" #white
-  clear #for background artifacting
-fi
 
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
+    fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 
 # Bindings:
@@ -119,16 +95,6 @@ autoload run-help
 # bindkey '^n' end-of-line
 
 
-# support colors in less
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
-
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/bitcomplete bit
 
@@ -141,4 +107,49 @@ PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
 
 # Haskell ghcup
 # update stack via ghcup tui and not via `stack update`
-###################source $HOME/.ghcup/env
+# source $HOME/.ghcup/env
+[ -f "/home/baka/.ghcup/env" ] && source "/home/baka/.ghcup/env" # ghcup-env
+
+export TWAUTH="oauth:00000000000000000000000000000e"
+export TWUSER="b0000000000r"
+export TG_TOKEN="1000000004:A000000000000000000000000000000000M"
+
+# Eerie config
+export EERIEDIR=/home/baka/.eerie
+export PATH=$PATH:$EERIEDIR/base/bin:$EERIEDIR/activeEnv/bin
+# End Eerie config
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+
+# Colors for man pages
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0 282828" #black
+    echo -en "\e]P8 928374" #darkgrey
+    echo -en "\e]P1 CC241D" #darkred
+    echo -en "\e]P9 FB4934" #red
+    echo -en "\e]P2 98971A" #darkgreen
+    echo -en "\e]PA B8BB26" #green
+    echo -en "\e]P3 D79921" #brown
+    echo -en "\e]PB FABD2F" #yellow
+    echo -en "\e]P4 458588" #darkblue
+    echo -en "\e]PC 83A598" #blue
+    echo -en "\e]P5 B16286" #darkmagenta
+    echo -en "\e]PD D3869B" #magenta
+    echo -en "\e]P6 689D6A" #darkcyan
+    echo -en "\e]PE 8EC07C" #cyan
+    echo -en "\e]P7 A89984" #lightgrey
+    echo -en "\e]PF EBDBB2" #white
+    clear #for background artifacting
+fi
+
+# support colors in less
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'

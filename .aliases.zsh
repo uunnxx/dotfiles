@@ -3,7 +3,8 @@ alias to='cd'
 alias tt='fg'
 # alias h='dijo'
 alias j="jobs -l"
-alias rm="rm -I"
+# alias rm="rm -I"
+alias rm='remove'
 
 alias b="bb pdf djvu"
 alias B="fzf_books"
@@ -11,23 +12,37 @@ alias D="cd /mnt/hdd/Documents/Books"
 alias DD="cd /mnt/hdd/Documents/"
 
 alias di="sudo dpkg -i"
-alias ag="sudo apt"
-alias agi="sudo apt install"
-alias ags="apt search"
-alias aga="sudo apt autoclean"
-alias agar="sudo apt autoremove"
-alias agc="sudo apt clean"
-alias agli="apt list --installed"
-alias agp="sudo apt purge"
-alias agr="sudo apt remove"
-alias agu="sudo apt update"
-alias agug="sudo apt upgrade"
-alias aguu="sudo apt update && sudo apt upgrade"
+# alias ag="sudo apt"
+# alias agi="sudo apt install"
+# alias ags="apt search"
+# alias aga="sudo apt autoclean"
+# alias agar="sudo apt autoremove"
+# alias agc="sudo apt clean"
+# alias agli="apt list --installed"
+# alias agp="sudo apt purge"
+# alias agr="sudo apt remove"
+# alias agu="sudo apt update"
+# alias agug="sudo apt upgrade"
+# alias aguu="sudo apt update && sudo apt upgrade"
+
+# https://gitlab.com/volian/nala
+alias nai='sudo nala install'
+alias nap='sudo nala purge'
+alias nar='sudo nala remove'
+alias nali='nala list --installed'
+alias nas='nala search'
+alias nash='nala show'
+alias nau='sudo nala update'
+alias naug='sudo nala upgrade'
+alias nauu='sudo nala update && sudo nala upgrade'
 
 alias l='lsd -lAh --group-dirs first'
 alias ll='lsd -lh --group-dirs first'
 alias ls='lsd --group-dirs first'
 alias la='lsd -lah --group-dirs first'
+
+
+alias rg='rg -S'
 
 alias mdir="mkdir -pv"
 
@@ -115,7 +130,8 @@ alias vim=nvim
 alias ivm=nvim
 alias vmi=nvim
 
-alias cat='bat --theme base16 --color=auto'
+alias bat='bat --theme base16 --color=auto'
+alias batp='bat --plain --theme base16 --color=auto'
 alias batv="fzf --preview 'bat --theme base16 {}'"
 alias rr=ranger
 alias md='/home/baka/.asdf/shims/md'
