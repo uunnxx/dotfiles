@@ -93,8 +93,10 @@ alias cri='crystal init'
 
 alias py='python'
 alias iI='ipython'
-alias ii='ptpython'
+# alias ii='ptpython'
+alias ii='bpython'
 alias note="jupyter notebook"
+alias vac='source venv/bin/activate'
 
 alias server="ruby -run -e httpd . -p 8080"
 alias gentags="ripper-tags -R --exclude=.git"
@@ -171,7 +173,7 @@ alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader
 
 # Wall's
 # alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
-alias neofetch='neofetch --ascii ~/drafts/ussr --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
+alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages theme icons'
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings"
 alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings"
 # -----------------------------------------------------------------------------------------------------
