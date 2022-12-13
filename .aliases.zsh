@@ -69,6 +69,8 @@ alias tran="trans -d -t ru -I"
 alias tranej="trans -I :ja en:"
 alias traner="trans -I :ru en:"
 alias tranje="trans -I :en ja:"
+alias t="trans :ru"
+alias tI="trans :ru"
 
 alias O='xdg-open &>/dev/null'
 
@@ -96,7 +98,10 @@ alias iI='ipython'
 # alias ii='ptpython'
 alias ii='bpython'
 alias note="jupyter notebook"
-alias vac='source venv/bin/activate'
+
+alias venv='python3 -m venv .venv'
+alias vac='source ./.venv/bin/activate'
+alias vad='deactivate'
 
 alias server="ruby -run -e httpd . -p 8080"
 alias gentags="ripper-tags -R --exclude=.git"
@@ -113,6 +118,7 @@ alias manj='man --locale=ja'
 alias ch="tldr \$(tldr -l | fzf)"
 
 alias fos='fossil'
+alias lg='lazygit'
 alias tis='tig status'
 alias til='tig log'
 alias tib='tig blame -C'
@@ -190,7 +196,7 @@ alias editalias="nvim ~/.aliases.zsh"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
 # -----------------------------------------------------------------------------------------------------
 
-alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/half/Documents"
+alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/backup/Documents/"
 
 # Redshift
 alias rday="redshift -x -m randr && redshift -m randr -O 3500 -b 0.9"
