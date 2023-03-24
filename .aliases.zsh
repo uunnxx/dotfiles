@@ -11,7 +11,7 @@ alias B="fzf_books"
 alias D="cd /mnt/hdd/Documents/Books"
 alias DD="cd /mnt/hdd/Documents/"
 
-alias di="sudo dpkg -i"
+# alias di="sudo dpkg -i"
 # alias ag="sudo apt"
 # alias agi="sudo apt install"
 # alias ags="apt search"
@@ -43,6 +43,7 @@ alias la='lsd -lah --group-dirs first'
 
 
 alias rg='rg -S'
+alias -g RG='| rg -S'
 
 alias mdir="mkdir -pv"
 
@@ -68,6 +69,7 @@ alias fuck='TF_CMD=$(TF_ALIAS=fuck PYTHONIOENCODING=utf-8 TF_SHELL_ALIASES=$(ali
 alias tran="trans -d -t ru -I"
 alias tranej="trans -I :ja en:"
 alias traner="trans -I :ru en:"
+alias tranre="trans -I :en ru:"
 alias tranje="trans -I :en ja:"
 alias t="trans :ru"
 alias tI="trans :ru"
@@ -94,6 +96,7 @@ alias cr='crystal'
 alias cri='crystal init'
 
 alias py='python'
+alias pym='python manage.py'
 alias iI='ipython'
 # alias ii='ptpython'
 alias ii='bpython'
@@ -103,6 +106,7 @@ alias venv='python3 -m venv .venv'
 alias vac='source ./.venv/bin/activate'
 alias vad='deactivate'
 
+alias rb='ruby'
 alias server="ruby -run -e httpd . -p 8080"
 alias gentags="ripper-tags -R --exclude=.git"
 
@@ -138,6 +142,8 @@ alias vim=nvim
 alias ivm=nvim
 alias vmi=nvim
 
+alias vv=vimv
+
 alias bat='bat --theme base16 --color=auto'
 alias batp='bat --plain --theme base16 --color=auto'
 alias batv="fzf --preview 'bat --theme base16 {}'"
@@ -149,7 +155,7 @@ alias fd=fdfind
 
 alias xpaste="xclip -o"
 alias xcopy="xclip -i"
-# Exapmple of use:
+# Usage:
 # ls | xcopy
 # xpaste > input.txt
 # -----------------------------------------------------------------------------------------------------
@@ -160,18 +166,18 @@ alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans M
 alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
 
 ## Droid Cam
-alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
-alias cam_adbhd='droidcam-cli -size=1280x720 4747'
-alias cam_fhd='droidcam-cli -size=1920x1080 192.168.0.11 4747'
-alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
+# alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
+# alias cam_adbhd='droidcam-cli -size=1280x720 4747'
+# alias cam_fhd='droidcam-cli -size=1920x1080 192.168.0.11 4747'
+# alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 # -----------------------------------------------------------------------------------------------------
 
 
 # Downloader
-alias yl=yt-dlp
-alias ylnp="yt-dlp --no-playlist"
-alias ylph='yt-dlp --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
-alias ylpc='yt-dlp --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias yl="yt-dlp -f mp4"
+alias ylnp="yt-dlp -f mp4 --no-playlist"
+alias ylph='yt-dlp -f mp4 --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias ylpc='yt-dlp -f mp4 --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 
 alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 # -----------------------------------------------------------------------------------------------------
@@ -182,18 +188,19 @@ alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader
 alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages theme icons'
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings"
 alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings"
+
+alias qrelated_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback --shuffle -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
 # -----------------------------------------------------------------------------------------------------
 
 
 # Lofi Girl's stream
-# alias lofi="mpvw https://www.youtube.com/watch\?v\=5qap5aO4i9A --no-resume-playback"
-
+# alias lofi="mpv --wid=\$WINDOWID https://www.youtube.com/watch\?v\=jfKfPfyJRdk --no-resume-playback"
 
 # Shell related
 alias loadshell="source ~/.zshrc"
 alias editshell="nvim ~/.zshrc"
 alias editalias="nvim ~/.aliases.zsh"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias editomz="nvim ~/.oh-my-zsh"
 # -----------------------------------------------------------------------------------------------------
 
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/backup/Documents/"
