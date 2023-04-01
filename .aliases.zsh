@@ -132,6 +132,7 @@ alias rpfd='rspec --color --format d'
 
 alias aoeu=asdf
 alias ml='multipass'
+alias dc=docker
 
 alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
@@ -189,7 +190,7 @@ alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages them
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings"
 alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings"
 
-alias qrelated_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback --shuffle -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
+alias qrelated_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
 # -----------------------------------------------------------------------------------------------------
 
 
