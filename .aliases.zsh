@@ -86,6 +86,7 @@ alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --inpu
 alias mpvw="mpv --wid=\$WINDOWID"
 
 alias bonsai="cbonsai -ilL60"
+alias redshift='redshift -m randr'
 # -----------------------------------------------------------------------------------------------------
 
 
@@ -96,11 +97,20 @@ alias cr='crystal'
 alias cri='crystal init'
 
 alias py='python'
-alias pym='python manage.py'
+alias pym='./manage.py'
+alias dja='django-admin'
 alias iI='ipython'
 # alias ii='ptpython'
 alias ii='bpython'
 alias note="jupyter notebook"
+
+# alias pipir='pip install -r requirements.txt'
+# alias pipreq='pip freeze > requirements.txt'
+# alias pipu='pip install --upgrade'
+alias pipfi='pip freeze | fzf'
+alias pipf='pip freeze'
+# alias pipun='pip uninstall'
+# alias pipi='pip install'
 
 alias venv='python3 -m venv .venv'
 alias vac='source ./.venv/bin/activate'
@@ -109,6 +119,8 @@ alias vad='deactivate'
 alias rb='ruby'
 alias server="ruby -run -e httpd . -p 8080"
 alias gentags="ripper-tags -R --exclude=.git"
+
+alias sqlite='sqlite3'
 
 # apt install libmozjs-78-dev
 alias js='js78'
@@ -163,8 +175,9 @@ alias xcopy="xclip -i"
 
 
 # Stream related
-alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+90% -f "DejaVu Sans Mono Bold"'
-alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono Bold"'
+# 88 because of statusbar
+alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+88% -f "DejaVu Sans Mono Bold"'
+alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+88% -f "DejaVu Sans Mono Bold"'
 
 ## Droid Cam
 # alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
@@ -175,22 +188,24 @@ alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+90% -f "DejaVu Sans Mono
 
 
 # Downloader
-alias yl="yt-dlp -f mp4"
-alias ylnp="yt-dlp -f mp4 --no-playlist"
-alias ylph='yt-dlp -f mp4 --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
-alias ylpc='yt-dlp -f mp4 --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias yl="yt-dlp --embed-thumbnail -f mp4"
+alias ylnp="yt-dlp --embed-thumbnail -f mp4 --no-playlist"
+alias ylph='yt-dlp --embed-thumbnail -f mp4 --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias ylpc='yt-dlp --embed-thumbnail -f mp4 --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 
-alias yl-fast="yt-dlp -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
+alias yl-fast="yt-dlp --embed-thumbnail -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 # -----------------------------------------------------------------------------------------------------
 
 
 # Wall's
 # alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
 alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages theme icons'
-alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings"
-alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv -wid WID  --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings"
 
-alias qrelated_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
+# Repeat current file only: --loop-file
+alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
+alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback -wid WID --shuffle  --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings  --input-ipc-server=$HOME/.mpv/socket"
+
+alias qrelated="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
 # -----------------------------------------------------------------------------------------------------
 
 
