@@ -2,7 +2,7 @@
 #
 # ~/.xinitrc
 
-# Executed by startxexport GTK_IM_MODULE=fcitx
+# Executed by startx export GTK_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
@@ -15,7 +15,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 xset +fp /home/unx/.local/share/fonts
 xset fp rehash
 
-DEFAULT_SESSION='i3 --shmlog-size 0'
 
 # merge in defaults and keymaps
 
@@ -36,34 +35,24 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # start some nice programs
+# if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+#     for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+#         [ -x "$f" ] && . "$f"
+#     done
+#     unset f
+# fi
 
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-        [ -x "$f" ] && . "$f"
-    done
-    unset f
-fi
-
-get_session(){
-    local dbus_args=(--sh-syntax --exit-with-session)
-    case $1 in
-        awesome) dbus_args+=(awesome) ;;
-        bspwm) dbus_args+=(bspwm-session) ;;
-        gnome) dbus_args+=(gnome-session) ;;
-        i3|i3wm) dbus_args+=(i3 --shmlog-size 0) ;;
-        kde) dbus_args+=(startkde) ;;
-        lxde) dbus_args+=(startlxde) ;;
-        lxqt) dbus_args+=(lxqt-session) ;;
-        mate) dbus_args+=(mate-session) ;;
-        xfce) dbus_args+=(xfce4-session) ;;
-        openbox) dbus_args+=(openbox-session) ;;
-        *) dbus_args+=($DEFAULT_SESSION) ;;
-    esac
-
-    echo "dbus-launch ${dbus_args[*]}"
-}
-
-exec $(get_session)
-
-
-
+# start session
+# DEFAULT_SESSION='i3 --shmlog-size 0'
+# get_session(){
+#     local dbus_args=(--sh-syntax --exit-with-session)
+#     case $1 in
+#         gnome) dbus_args+=(gnome-session) ;;
+#         i3|i3wm) dbus_args+=(i3 --shmlog-size 0) ;;
+#         *) dbus_args+=($DEFAULT_SESSION) ;;
+#     esac
+#
+#     echo "dbus-launch ${dbus_args[*]}"
+# }
+#
+# exec $(get_session)
