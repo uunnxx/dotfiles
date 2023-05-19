@@ -1,10 +1,11 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="af-magic-custom"
-ZSH_DISABLE_COMPFIX=true
+# ZSH_DISABLE_COMPFIX=true
 
 plugins=(
     git
     ugit
+    gitignore
     # forgit
     fossil
     vi-mode
@@ -12,13 +13,14 @@ plugins=(
     colored-man-pages
     fd
     asdf
-    pip
     docker
+    pip
     shrink-path
     zsh-autosuggestions
     fast-syntax-highlighting
     # fzf
     fzf-tab
+    # zsh-syntax-highlighting
     # ruby
     # poetry
     # pyenv
@@ -62,11 +64,6 @@ complete -o nospace -C /usr/local/bin/bitcomplete bit
 # source $HOME/.ghcup/env
 # [ -f "/home/baka/.ghcup/env" ] && source "/home/baka/.ghcup/env" # ghcup-env
 
-# ENV TOKENS
-export TWAUTH="oauth:******************************"
-export TWUSER="************"
-export TG_TOKEN="**********:*****************-*****************"
-
 
 # Eerie config
 # export EERIEDIR=/home/baka/.eerie
@@ -74,8 +71,9 @@ export TG_TOKEN="**********:*****************-*****************"
 # End Eerie config
 
 
-export PATH="$HOME/apps/elixir-ls/release:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+export PATH="$HOME/apps/elixir-ls/release:$PATH"
 export PATH="$HOME/.r2env/bin:$PATH"
 
 # Flatpak
@@ -87,15 +85,21 @@ export PATH="/usr/local/cuda-11.7/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
 export CUDA_HOME="/usr/local/cuda-11.7"
 
-# For Python
-export PYTHONSTARTUP="${HOME}/.pyrc"
-export PYTHONIOENCODING="UTF-8"
+# -----------------------------------------------------------------------------
+# PYTHON
+# export PYTHONPATH="${HOME}/.asdf/installs/python/3.11.2/lib/python3.11/site-packages:$PYTHONPATH"
+# export PYTHONPATH="./venv/bin/python"
+# For OpenCV
+# export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python3.10/site-packages"
+# export PYTHONSTARTUP="${HOME}/.pyrc"
+# export PYTHONIOENCODING="UTF-8"
 
 # Virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-# For OpenCV
-export PYTHONPATH="/usr/local/lib/python3.10/site-packages:$PYTHONPATH"
+# -----------------------------------------------------------------------------
+
+export GTK_THEME='Yaru-dark'
 
 # export R2PM_DBDIR="$HOME/apps/radare2/radare2-pm/db"
 export R2PM_PLUGDIR=$HOME/.radare2/plugins
@@ -114,12 +118,11 @@ export FZF_CTRL_T_OPTS=" --preview 'bat -n --color=always {}' --bind 'ctrl-/:cha
 export FZF_ALT_C_OPTS="--preview 'tree -C {}' --height 100%"
 export FZF_BASE=/usr/bin/fzf
 
+
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
     fd --type d --hidden --follow --exclude ".git" . "$1"
 }
-
-
 
 export IRUBY_SESSION_ADAPTER="cztop"
 
@@ -176,3 +179,6 @@ export GPG_TTY=$(tty)
 
 
 source /home/baka/.config/broot/launcher/bash/br
+
+
+# ENV TOKENS
