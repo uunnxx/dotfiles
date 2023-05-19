@@ -117,8 +117,10 @@ alias vac='source ./.venv/bin/activate'
 alias vad='deactivate'
 
 alias rb='ruby'
-alias server="ruby -run -e httpd . -p 8080"
 alias gentags="ripper-tags -R --exclude=.git"
+
+alias server_rb="ruby -run -e httpd . -p 8080"
+alias server_py="python -m http.server"
 
 alias sqlite='sqlite3'
 
