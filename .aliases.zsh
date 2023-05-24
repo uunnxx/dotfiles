@@ -1,29 +1,13 @@
 # Shortcuts
 alias to='cd'
 alias tt='fg'
-# alias h='dijo'
 alias j="jobs -l"
-# alias rm="rm -I"
 alias rm='remove'
 
 alias b="bb pdf djvu"
 alias B="fzf_books"
 alias D="cd /mnt/hdd/Documents/Books"
 alias DD="cd /mnt/hdd/Documents/"
-
-# alias di="sudo dpkg -i"
-# alias ag="sudo apt"
-# alias agi="sudo apt install"
-# alias ags="apt search"
-# alias aga="sudo apt autoclean"
-# alias agar="sudo apt autoremove"
-# alias agc="sudo apt clean"
-# alias agli="apt list --installed"
-# alias agp="sudo apt purge"
-# alias agr="sudo apt remove"
-# alias agu="sudo apt update"
-# alias agug="sudo apt upgrade"
-# alias aguu="sudo apt update && sudo apt upgrade"
 
 # https://gitlab.com/volian/nala
 alias nai='sudo nala install'
@@ -87,7 +71,7 @@ alias mpvw="mpv --wid=\$WINDOWID"
 
 alias bonsai="cbonsai -ilL60"
 alias redshift='redshift -m randr'
-# -----------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 # Programming related
@@ -163,17 +147,17 @@ alias bat='bat --theme base16 --color=auto'
 alias batp='bat --plain --theme base16 --color=auto'
 alias batv="fzf --preview 'bat --theme base16 {}'"
 alias rr=ranger
-alias md='/home/baka/.asdf/shims/md'
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
 alias fd=fdfind
+alias ff="fzf --bind 'enter:become(nvim {})' --header 'Press ENTER to open this file on NVIM' --preview 'bat -n --color=always {}' --height 95% --color header:italic"
 
 alias xpaste="xclip -o"
 alias xcopy="xclip -i"
 # Usage:
 # ls | xcopy
 # xpaste > input.txt
-# -----------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 # Stream related
@@ -181,22 +165,22 @@ alias xcopy="xclip -i"
 alias screenkey_right='screenkey -p fixed -g 100%x10%+100%+88% -f "DejaVu Sans Mono Bold"'
 alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+88% -f "DejaVu Sans Mono Bold"'
 
-## Droid Cam
+# Droid Cam
 # alias cam_adbfhd='droidcam-cli -size=1920x1080 4747'
 # alias cam_adbhd='droidcam-cli -size=1280x720 4747'
 # alias cam_fhd='droidcam-cli -size=1920x1080 192.168.0.11 4747'
 # alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
-# -----------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 
 # Downloader
-alias yl="yt-dlp --embed-thumbnail -f mp4"
-alias ylnp="yt-dlp --embed-thumbnail -f mp4 --no-playlist"
-alias ylph='yt-dlp --embed-thumbnail -f mp4 --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
-alias ylpc='yt-dlp --embed-thumbnail -f mp4 --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias yl="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4"
+alias ylnp="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4 --no-playlist"
+alias ylph='yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4 --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias ylpc='yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4 --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
 
-alias yl-fast="yt-dlp --embed-thumbnail -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
-# -----------------------------------------------------------------------------------------------------
+alias yl-fast="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
+# -----------------------------------------------------------------------------
 
 
 # Wall's
@@ -204,11 +188,20 @@ alias yl-fast="yt-dlp --embed-thumbnail -f best --external-downloader aria2c --e
 alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages theme icons'
 
 # Repeat current file only: --loop-file
-alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
-alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback -wid WID --shuffle  --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings  --input-ipc-server=$HOME/.mpv/socket"
+alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback
+    -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist
+    --player-operation-mode=cplayer --no-audio --panscan=1.0
+    --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
+alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback
+    -wid WID --shuffle  --no-osc --no-osd-bar --loop-playlist
+    --player-operation-mode=cplayer --panscan=1.0
+    --no-input-default-bindings  --input-ipc-server=$HOME/.mpv/socket"
 
-alias qrelated="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
-# -----------------------------------------------------------------------------------------------------
+alias qrelated="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback
+    --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist
+    --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings
+    --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
+# -----------------------------------------------------------------------------
 
 
 # Lofi Girl's stream
@@ -219,7 +212,7 @@ alias loadshell="source ~/.zshrc"
 alias editshell="nvim ~/.zshrc"
 alias editalias="nvim ~/.aliases.zsh"
 alias editomz="nvim ~/.oh-my-zsh"
-# -----------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/backup/Documents/"
 
@@ -230,4 +223,4 @@ alias rnight="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8"
 alias rnightq="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8 && exit"
 alias roff="redshift -x -m randr"
 alias roffq="redshift -x -m randr && exit"
-# -----------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
