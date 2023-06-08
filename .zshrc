@@ -109,20 +109,45 @@ export R2PM_GITDIR=$HOME/.radare2/r2pm/git
 # RETDEC
 export RID=$HOME/apps/retdec/bin
 
-#################################################################
+################################################################################
 # FZF
+#
+export FZF_BASE=$HOME/.fzf/bin/fzf
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='fdfind
+    --type f
+    --strip-cwd-prefix
+    --hidden
+    --follow
+    --exclude .git 
+    --exclude .venv
+    --exclude __pycache__'
+
 # Preview file content using bat (https://github.com/sharkdp/bat)
-export FZF_CTRL_T_OPTS=" --preview 'bat -n --color=always {}' --bind 'ctrl-/:change-preview-window(down|hidden|)' --height 100%"
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --height 100%"
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="--preview 'tree -C {}' --height 100%"
-export FZF_BASE=/usr/bin/fzf
+export FZF_CTRL_R_OPTS="
+    --preview 'echo {}' --preview-window up:3:hidden:wrap
+    --bind 'ctrl-t:execute-silent(echo -n {2..} | xclip -i)+abort'
+    --color header:italic
+    --header 'Press CTRL-T to copy command into clipboard'
+    --height 80%"
 
+_fzf_compgen_path() {
+    fdfind --hidden --follow --exclude ".git" --exclude ".venv" . "$1"
+}
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-    fd --type d --hidden --follow --exclude ".git" . "$1"
+    fdfind --type d --hidden --follow --exclude ".git" --exclude ".venv" . "$1"
 }
+
+
+
+################################################################################
 
 export IRUBY_SESSION_ADAPTER="cztop"
 
@@ -134,6 +159,8 @@ export EDITOR=nvim
 export BROWSER=brave-browser
 export PAGER="bat -p"
 export TERM="xterm-256color"
+
+# `time` output format
 export TIMEFMT=$'\n[job name] %J\n\n\t[0] real:    %E :: %mE :: %uE\n\t[1] user:    %U\n\t[2]  sys:    %S\n\t[3]  cpu:    %P'
 
 
@@ -174,11 +201,21 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
 
+# NNN File Manager
 export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview;p:preview-tui;t:preview-tabbed'
+
+# GPG Related
 export GPG_TTY=$(tty)
 
-
+# Broot
 source /home/baka/.config/broot/launcher/bash/br
 
 
+
 # ENV TOKENS
+export TWAUTH=''
+export TWUSER=''
+export TG_TOKEN=''
+
+export TG_TOKEN_MAIN_BOT=''
+export TG_RESOURCE_CHAT_ID=''
