@@ -84,8 +84,8 @@ alias py='python'
 alias pym='./manage.py'
 alias dja='django-admin'
 alias iI='ipython'
-# alias ii='ptpython'
-alias ii='bpython'
+alias ii='ptpython'
+# alias ii='bpython'
 alias note="jupyter notebook"
 
 # alias pipir='pip install -r requirements.txt'
