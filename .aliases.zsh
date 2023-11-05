@@ -192,12 +192,12 @@ alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
     -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist \
     --player-operation-mode=cplayer --no-audio --panscan=1.0 \
     --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
-alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback
-    -wid WID --shuffle  --no-osc --no-osd-bar --loop-playlist
-    --player-operation-mode=cplayer --panscan=1.0
-    --no-input-default-bindings  --input-ipc-server=$HOME/.mpv/socket"
 
-alias qrelated="xwinwrap -ov -g 1920x1080+0+0 -- mpv --no-resume-playback \
+alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
+    -wid WID  --shuffle  --no-osc --no-osd-bar --loop-playlist \
+    --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
+
+alias qrelated="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
     --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist \
     --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings \
     --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
