@@ -79,6 +79,11 @@ alias jl='julia'
 
 alias cr='crystal'
 alias cri='crystal init'
+alias crb='crystal build'
+alias crs='crystal specs'
+alias crt='crystal tool'
+alias crtc='crystal tool context'
+alias crth='crystal tool hierarchy'
 
 alias py='python'
 alias pym='./manage.py'
