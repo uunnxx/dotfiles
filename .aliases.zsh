@@ -85,12 +85,17 @@ alias crt='crystal tool'
 alias crtc='crystal tool context'
 alias crth='crystal tool hierarchy'
 
+# Python related
 alias py='python'
+
 alias pym='./manage.py'
 alias dja='django-admin'
+alias manage='./manage.py'
+alias admin='django-admin'
+
 alias iI='ipython'
+alias II='bpython'
 alias ii='ptpython'
-# alias ii='bpython'
 alias note="jupyter notebook"
 
 # alias pipir='pip install -r requirements.txt'
@@ -113,7 +118,7 @@ alias server_py="python -m http.server"
 
 alias sqlite='sqlite3'
 
-# apt install libmozjs-78-dev
+# install libmozjs-78-dev
 alias js='js78'
 
 alias gcdeb='gcc -g -fverbose-asm -masm=intel -S'
