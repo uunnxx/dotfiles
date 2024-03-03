@@ -95,7 +95,8 @@ alias admin='django-admin'
 
 alias iI='ipython'
 alias II='bpython'
-alias ii='ptpython'
+# alias ii='ptpython'
+alias ii='ptipython'
 alias note="jupyter notebook"
 
 # alias pipir='pip install -r requirements.txt'
@@ -130,7 +131,10 @@ alias manj='man --locale=ja'
 alias ch="tldr \$(tldr -l | fzf)"
 
 alias fos='fossil'
+alias pl='pijul'
+
 alias lg='lazygit'
+alias lzd='lazydocker'
 alias tis='tig status'
 alias til='tig log'
 alias tib='tig blame -C'
