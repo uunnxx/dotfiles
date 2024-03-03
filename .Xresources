@@ -2,7 +2,7 @@
 !URxvt.font:     xft:DejaVuSansMono NF:size=12
 ! URxvt.font:     xft:DejaVuSansMono NF:size=12
 ! URxvt.font:     xft:Hack Nerd Font:size=12
-URxvt.font:     xft:FuraCode Nerd Font Mono:size=12
+URxvt.font:     xft:mononoki:size=11
 ! URxvt.font:     xft:TerminessTTF Nerd Font Mono:size=11
 ! URxvt.font:     xft:Hack Nerd Font:minspace=False:size=12
 URxvt.letterSpace: 0
