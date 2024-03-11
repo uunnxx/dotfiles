@@ -117,6 +117,9 @@ alias gentags="ripper-tags -R --exclude=.git"
 alias server_rb="ruby -run -e httpd . -p 8080"
 alias server_py="python -m http.server"
 
+alias el=erl
+alias rebar=rebar3
+
 alias sqlite='sqlite3'
 
 # install libmozjs-78-dev
