@@ -97,7 +97,7 @@ alias iI='ipython'
 alias II='bpython'
 # alias ii='ptpython'
 alias ii='ptipython'
-alias note="jupyter notebook"
+alias note="jupyter lab"
 
 # alias pipir='pip install -r requirements.txt'
 # alias pipreq='pip freeze > requirements.txt'
