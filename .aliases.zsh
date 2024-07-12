@@ -65,8 +65,10 @@ alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
 
-alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
-alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
+# alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
+# alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
+alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket --wid=\$WINDOWID"
+alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket --wid=\$WINDOWID"
 alias mpvw="mpv --wid=\$WINDOWID"
 
 alias bonsai="cbonsai -ilL60"
@@ -148,6 +150,7 @@ alias rpfd='rspec --color --format d'
 alias aoeu=asdf
 alias ml='multipass'
 alias dc=docker
+alias pm=podman
 
 alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
@@ -208,16 +211,16 @@ alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages them
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
     -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist \
     --player-operation-mode=cplayer --no-audio --panscan=1.0 \
-    --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
+    --no-input-default-bindings --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket"
 
 alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
     -wid WID  --shuffle  --no-osc --no-osd-bar --loop-playlist \
-    --no-input-default-bindings --input-ipc-server=$HOME/.mpv/socket"
+    --no-input-default-bindings --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket"
 
 alias qrelated="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
     --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist \
     --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings \
-    --input-ipc-server=$HOME/.mpv/socket $HOME/Music/current/"
+    --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket $HOME/Music/current/"
 # -----------------------------------------------------------------------------
 
 
@@ -234,8 +237,8 @@ alias editomz="nvim ~/.oh-my-zsh"
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/backup/Documents/"
 
 # Redshift
-alias rday="redshift -x -m randr && redshift -m randr -O 3500 -b 0.9"
-alias rdayq="redshift -x -m randr && redshift -m randr -O 3500 -b 0.9 && exit"
+alias rday="redshift -x -m randr && redshift -m randr -O 4500 -b 0.9"
+alias rdayq="redshift -x -m randr && redshift -m randr -O 4500 -b 0.9 && exit"
 alias rnight="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8"
 alias rnightq="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8 && exit"
 alias roff="redshift -x -m randr"
