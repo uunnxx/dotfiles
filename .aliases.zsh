@@ -194,10 +194,10 @@ alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+88% -f "DejaVu Sans Mono
 
 
 # Downloader
-alias yl="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4"
-alias ylnp="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4 --no-playlist"
-alias ylph='yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4 --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
-alias ylpc='yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f mp4 --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s"'
+alias yl="yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --ffmpeg-location /usr/bin/ffmpeg"
+alias ylnp="yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --no-playlist --ffmpeg-location /usr/bin/ffmpeg"
+alias ylph='yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --ffmpeg-location /usr/bin/ffmpeg'
+alias ylpc='yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --ffmpeg-location /usr/bin/ffmpeg'
 
 alias yl-fast="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 # -----------------------------------------------------------------------------
@@ -205,7 +205,7 @@ alias yl-fast="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f best --
 
 # Wall's
 # alias neofetch='neofetch --ascii_distro Ubuntu_small --disable cpu gpu gtk2 gtk3 packages shell kernel theme icons'
-alias neofetch='neofetch --ascii ~/drafts/ussr --disable gtk2 gtk3 packages theme icons'
+alias neofetch='neofetch --ascii ~/drafts/ascii/ussr --disable gtk2 gtk3 packages theme icons'
 
 # Repeat current file only: --loop-file
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \

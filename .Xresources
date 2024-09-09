@@ -35,8 +35,9 @@ Xft.autohint:   0
 ! Gruvbox theme
 
 ! hard contrast: *background: #1d2021
-*background: #1d2021
 ! soft contrast: *background: #32302f
+! *background: #1d2021
+*background: #32302f
 *foreground: #ebdbb2
 ! Black + DarkGrey
 *color0:  #282828
