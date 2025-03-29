@@ -4,6 +4,8 @@ alias tt='fg'
 alias j="jobs -l"
 alias rm='remove'
 
+alias tx='tmux'
+
 alias b="bb pdf djvu"
 alias B="fzf_books"
 alias D="cd /mnt/hdd/Documents/Books"
@@ -106,6 +108,7 @@ alias note="jupyter lab"
 # alias pipu='pip install --upgrade'
 alias pipfi='pip freeze | fzf'
 alias pipf='pip freeze'
+alias pp='poetry'
 # alias pipun='pip uninstall'
 # alias pipi='pip install'
 
@@ -163,6 +166,8 @@ alias vmi=nvim
 
 alias vv=vimv
 
+alias sql='sqlite3'
+
 alias bat='bat --theme base16 --color=auto'
 alias batp='bat --plain --theme base16 --color=auto'
 alias batv="fzf --preview 'bat --theme base16 {}'"
@@ -192,14 +197,22 @@ alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+88% -f "DejaVu Sans Mono
 # alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 # -----------------------------------------------------------------------------
 
+# YouTube Related
+PROXY="--proxy socks5://login:password@ip:port "
+YT_ARGUMENTS="--embed-thumbnail --embed-chapters --embed-subs -f bestvideo\[ext=mp4\]+bestaudio\[ext=m4a\]/best --ffmpeg-location /usr/bin/ffmpeg"
+YT_COOKIES="--cookies-from-browser firefox"
+YT_OUTPUT_FORMAT_GlOBAL="-o '$HOME/Videos/YT/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
+YT_OUTPUT_FORMAT_CURRENT="-o './%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
+YT_NOP="--no-playlist"
+YT_YESP="--yes-playlist"
 
-# Downloader
-alias yl="yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --ffmpeg-location /usr/bin/ffmpeg"
-alias ylnp="yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --no-playlist --ffmpeg-location /usr/bin/ffmpeg"
-alias ylph='yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --yes-playlist -o "$HOME/Videos/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --ffmpeg-location /usr/bin/ffmpeg'
-alias ylpc='yt-dlp --proxy http://127.0.0.1:8080 --embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio/best --yes-playlist -o "./%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s" --ffmpeg-location /usr/bin/ffmpeg'
+alias yl="yt-dlp $PROXY $YT_ARGUMENTS $YT_COOKIES"
+alias ylnp="yt-dlp $PROXY $YT_ARGUMENTS $YT_NOP $YT_COOKIES"
+alias ylph="yt-dlp $PROXY $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_GlOBAL $YT_COOKIES"
+alias ylpc="yt-dlp $PROXY $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_CURRENT $YT_COOKIES"
 
-alias yl-fast="yt-dlp --embed-thumbnail --embed-chapters --embed-subs -f best --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
+# `aria2c`
+alias yl-fast="yt-dlp $PROXY $YT_ARGUMENTS --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 # -----------------------------------------------------------------------------
 
 
