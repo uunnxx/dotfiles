@@ -12,7 +12,7 @@ usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-xset +fp /home/unx/.local/share/fonts
+xset +fp /home/baka/.local/share/fonts
 xset fp rehash
 
 

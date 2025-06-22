@@ -1,10 +1,10 @@
 # Shortcuts
 alias to='cd'
-alias tt='fg'
 alias j="jobs -l"
+alias jj='fg'
 alias rm='remove'
 
-alias tx='tmux'
+alias tt='tmux'
 
 alias b="bb pdf djvu"
 alias B="fzf_books"
@@ -27,6 +27,7 @@ alias ll='lsd -lh --group-dirs first'
 alias ls='lsd --group-dirs first'
 alias la='lsd -lah --group-dirs first'
 
+alias mv='mv -i'
 
 alias rg='rg -S'
 alias -g RG='| rg -S'
@@ -57,8 +58,8 @@ alias tranej="trans -I :ja en:"
 alias traner="trans -I :ru en:"
 alias tranre="trans -I :en ru:"
 alias tranje="trans -I :en ja:"
-alias t="trans :ru"
-alias tI="trans :ru"
+# alias t="trans :ru"
+# alias tI="trans :ru"
 
 alias O='xdg-open &>/dev/null'
 
@@ -69,8 +70,8 @@ alias lnn="xrandr --output DVI-D-0 --brightness"
 
 # alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
 # alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
-alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket --wid=\$WINDOWID"
-alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket --wid=\$WINDOWID"
+alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.config/mpv/socket --wid=\$WINDOWID"
+alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.config/mpv/socket --wid=\$WINDOWID"
 alias mpvw="mpv --wid=\$WINDOWID"
 
 alias bonsai="cbonsai -ilL60"
@@ -126,6 +127,8 @@ alias el=erl
 alias rebar=rebar3
 
 alias sqlite='sqlite3'
+alias sql='sqlite3 -csv -header db.sqlite3'
+alias -g PG='| pspg -s6 --csv'
 
 # install libmozjs-78-dev
 alias js='js78'
@@ -166,7 +169,6 @@ alias vmi=nvim
 
 alias vv=vimv
 
-alias sql='sqlite3'
 
 alias bat='bat --theme base16 --color=auto'
 alias batp='bat --plain --theme base16 --color=auto'
@@ -198,21 +200,22 @@ alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+88% -f "DejaVu Sans Mono
 # -----------------------------------------------------------------------------
 
 # YouTube Related
-PROXY="--proxy socks5://login:password@ip:port "
-YT_ARGUMENTS="--embed-thumbnail --embed-chapters --embed-subs -f bestvideo\[ext=mp4\]+bestaudio\[ext=m4a\]/best --ffmpeg-location /usr/bin/ffmpeg"
+PROXY="--proxy socks5://fAubFeLdJ9:TS6PpoaWmm@194.31.73.18:51654 "
+# YT_ARGUMENTS="--embed-thumbnail --embed-chapters --embed-subs -f bestvideo\[ext=mp4\]+bestaudio\[ext=m4a\]/best --ffmpeg-location /usr/bin/ffmpeg"
+YT_ARGUMENTS="--embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio --merge-output-format mp4 --ffmpeg-location /usr/bin/ffmpeg"
 YT_COOKIES="--cookies-from-browser firefox"
 YT_OUTPUT_FORMAT_GlOBAL="-o '$HOME/Videos/YT/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
 YT_OUTPUT_FORMAT_CURRENT="-o './%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
 YT_NOP="--no-playlist"
 YT_YESP="--yes-playlist"
 
-alias yl="yt-dlp $PROXY $YT_ARGUMENTS $YT_COOKIES"
-alias ylnp="yt-dlp $PROXY $YT_ARGUMENTS $YT_NOP $YT_COOKIES"
-alias ylph="yt-dlp $PROXY $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_GlOBAL $YT_COOKIES"
-alias ylpc="yt-dlp $PROXY $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_CURRENT $YT_COOKIES"
+alias yl="yt-dlp $YT_ARGUMENTS $YT_COOKIES"
+alias ylnp="yt-dlp $YT_ARGUMENTS $YT_NOP $YT_COOKIES"
+alias ylph="yt-dlp $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_GlOBAL $YT_COOKIES"
+alias ylpc="yt-dlp $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_CURRENT $YT_COOKIES"
 
 # `aria2c`
-alias yl-fast="yt-dlp $PROXY $YT_ARGUMENTS --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
+alias yl-fast="yt-dlp $YT_ARGUMENTS --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 # -----------------------------------------------------------------------------
 
 
