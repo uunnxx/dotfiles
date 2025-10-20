@@ -15,6 +15,8 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 xset +fp /home/baka/.local/share/fonts
 xset fp rehash
 
+# 108 is Alt_R
+xmodmap -e "keycode 108 = Menu"
 
 # merge in defaults and keymaps
 

@@ -45,7 +45,7 @@ alias hist="history | grep"
 alias :q="exit"
 alias q="exit"
 alias qq="exit"
-alias ctl='systemctl'
+alias ctl="sudo systemctl"
 
 alias __="sudo \$(fc -ln -1)"
 alias please="sudo \$(fc -ln -1)"
@@ -68,11 +68,6 @@ alias ncdu="ncdu --color=dark"
 alias rnn="xrandr --output HDMI-A-0 --brightness"
 alias lnn="xrandr --output DVI-D-0 --brightness"
 
-# alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
-# alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.mpv/socket --wid=\$WINDOWID"
-alias mpvs="mpv --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.config/mpv/socket --wid=\$WINDOWID"
-alias mpvss="mpv --shuffle --no-osc --osd-on-seek=no --no-resume-playback --input-ipc-server=$HOME/.config/mpv/socket --wid=\$WINDOWID"
-alias mpvw="mpv --wid=\$WINDOWID"
 
 alias bonsai="cbonsai -ilL60"
 alias redshift='redshift -m randr'
@@ -145,7 +140,7 @@ alias fos='fossil'
 alias pl='pijul'
 
 alias lg='lazygit'
-alias lzd='lazydocker'
+alias ldc='lazydocker'
 alias tis='tig status'
 alias til='tig log'
 alias tib='tig blame -C'
@@ -181,6 +176,7 @@ alias ff="fzf --bind 'enter:become(nvim {})' --header 'Press ENTER to open this 
 
 alias xpaste="xclip -o"
 alias xcopy="xclip -i"
+alias -g CP='| xclip -i'
 # Usage:
 # ls | xcopy
 # xpaste > input.txt
@@ -199,24 +195,29 @@ alias screenkey_left='screenkey -p fixed -g 100%x10%+0%+88% -f "DejaVu Sans Mono
 # alias cam_hd='droidcam-cli -size=1280x720 192.168.0.11 4747'
 # -----------------------------------------------------------------------------
 
-# YouTube Related
-PROXY="--proxy socks5://fAubFeLdJ9:TS6PpoaWmm@194.31.73.18:51654 "
-# YT_ARGUMENTS="--embed-thumbnail --embed-chapters --embed-subs -f bestvideo\[ext=mp4\]+bestaudio\[ext=m4a\]/best --ffmpeg-location /usr/bin/ffmpeg"
-YT_ARGUMENTS="--embed-thumbnail --embed-chapters --embed-subs -f bestvideo+bestaudio --merge-output-format mp4 --ffmpeg-location /usr/bin/ffmpeg"
-YT_COOKIES="--cookies-from-browser firefox"
-YT_OUTPUT_FORMAT_GlOBAL="-o '$HOME/Videos/YT/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
+
+# Downloader Related
+YT_OUTPUT_FORMAT_GLOBAL="-o '$HOME/Videos/YT/%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
 YT_OUTPUT_FORMAT_CURRENT="-o './%(channel)s/%(playlist)s/%(playlist_index)s-%(title)s-%(id)s.%(ext)s'"
 YT_NOP="--no-playlist"
 YT_YESP="--yes-playlist"
 
-alias yl="yt-dlp $YT_ARGUMENTS $YT_COOKIES"
-alias ylnp="yt-dlp $YT_ARGUMENTS $YT_NOP $YT_COOKIES"
-alias ylph="yt-dlp $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_GlOBAL $YT_COOKIES"
-alias ylpc="yt-dlp $YT_ARGUMENTS $YT_YESP $YT_OUTPUT_FORMAT_CURRENT $YT_COOKIES"
+alias yl="yt-dlp $YT_NOP"
+alias ylpc="yt-dlp $YT_YESP $YT_OUTPUT_FORMAT_CURRENT"
+alias ylph="yt-dlp $YT_YESP $YT_OUTPUT_FORMAT_GLOBAL"
+
 
 # `aria2c`
-alias yl-fast="yt-dlp $YT_ARGUMENTS --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
+alias yl-fast="yt-dlp $ --external-downloader aria2c --external-downloader-args \"-j 16 -s 16 -x 16 -k 1M\" $1"
 # -----------------------------------------------------------------------------
+
+
+# MPV Related
+MPV_SOCKET_FILE="/home/baka/.config/mpv/socket"
+
+alias mpvs="mpv --no-resume-playback --input-ipc-server=$MPV_SOCKET_FILE --wid=\$WINDOWID"
+alias mpvss="mpv --shuffle --no-resume-playback --input-ipc-server=$MPV_SOCKET_FILE --wid=\$WINDOWID"
+alias mpvw="mpv --wid=\$WINDOWID"
 
 
 # Wall's
@@ -227,16 +228,16 @@ alias neofetch='neofetch --ascii ~/drafts/ascii/ussr --disable gtk2 gtk3 package
 alias right_wall="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
     -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist \
     --player-operation-mode=cplayer --no-audio --panscan=1.0 \
-    --no-input-default-bindings --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket"
+    --no-input-default-bindings --input-ipc-server=$MPV_SOCKET_FILE"
 
 alias right_wall_audio="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
-    -wid WID  --shuffle  --no-osc --no-osd-bar --loop-playlist \
-    --no-input-default-bindings --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket"
+    -wid WID  --shuffle --no-osc --no-osd-bar --loop-playlist \
+    --no-input-default-bindings --input-ipc-server=$MPV_SOCKET_FILE"
 
 alias qrelated="xwinwrap -ov -g 1920x1080+1920+0 -- mpv --no-resume-playback \
-    --shuffle -wid WID  --no-osc --no-osd-bar --loop-playlist \
+    --shuffle -wid WID --no-osc --no-osd-bar --loop-playlist \
     --player-operation-mode=cplayer --panscan=1.0 --no-input-default-bindings \
-    --input-ipc-server=$HOME/snap/mpv/current/.config/mpv/socket $HOME/Music/current/"
+    --input-ipc-server=$MPV_SOCKET_FILE $HOME/Music/current/"
 # -----------------------------------------------------------------------------
 
 
@@ -253,10 +254,33 @@ alias editomz="nvim ~/.oh-my-zsh"
 alias resync_it="rsync --delete --verbose --recursive --update --progress /mnt/hdd/Documents/ /mnt/backup/Documents/"
 
 # Redshift
-alias rday="redshift -x -m randr && redshift -m randr -O 4500 -b 0.9"
-alias rdayq="redshift -x -m randr && redshift -m randr -O 4500 -b 0.9 && exit"
+alias rday="redshift -x -m randr && redshift -m randr -O 3000 -b 0.9"
+alias rdayq="redshift -x -m randr && redshift -m randr -O 3000 -b 0.9 && exit"
 alias rnight="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8"
 alias rnightq="redshift -x -m randr && redshift -m randr -O 2600 -b 0.8 && exit"
 alias roff="redshift -x -m randr"
 alias roffq="redshift -x -m randr && exit"
 # -----------------------------------------------------------------------------
+
+
+# syffix aliasing
+# i.e. filename.py [enter] will open filename.py with nvim
+alias -s py=nvim
+alias -s rb=nvim
+
+alias -s tex=nvim
+alias -s md=nvim
+alias -s json=nvim
+alias -s html=nvim
+alias -s txt=nvim
+alias -s toml=nvim
+alias -s lock=nvim
+
+alias -s sqlite3=sqlite3
+alias -s pdf=zathura
+alias -s djvu=zathura
+
+alias -s mp4="mpv --wid=\$WINDOWID"
+alias -s webm="mpv --wid=\$WINDOWID"
+alias -s mkv="mpv --wid=\$WINDOWID"
+alias -s mp3="mpv --wid=\$WINDOWID"
