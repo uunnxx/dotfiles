@@ -88,9 +88,9 @@ alias crth='crystal tool hierarchy'
 # Python related
 alias py='python'
 
-alias pym='./manage.py'
+alias pym='python manage.py'
 alias dja='django-admin'
-alias manage='./manage.py'
+alias manage='python manage.py'
 alias admin='django-admin'
 
 alias iI='ipython'
@@ -144,6 +144,9 @@ alias ldc='lazydocker'
 alias tis='tig status'
 alias til='tig log'
 alias tib='tig blame -C'
+
+
+alias gst='git status'
 
 alias rp='rspec --color'
 alias rpfd='rspec --color --format d'
@@ -284,3 +287,5 @@ alias -s mp4="mpv --wid=\$WINDOWID"
 alias -s webm="mpv --wid=\$WINDOWID"
 alias -s mkv="mpv --wid=\$WINDOWID"
 alias -s mp3="mpv --wid=\$WINDOWID"
+
+alias suspend="systemctl suspend"

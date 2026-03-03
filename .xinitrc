@@ -4,6 +4,7 @@
 
 # Executed by startx export GTK_IM_MODULE=fcitx
 export GTK_IM_MODULE=fcitx
+# export GTK_IM_MODULE=xim # for steam or just launch it with this env
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 
