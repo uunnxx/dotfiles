@@ -1,79 +1,60 @@
+if [[ ":$FPATH:" != *":/home/baka/.zsh/completions:"* ]]; then export FPATH="/home/baka/.zsh/completions:$FPATH"; fi
+# Load before `source $ZSH/oh-my-zsh.sh`
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
+
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 export ZSH="$HOME/.oh-my-zsh"
+
 ZSH_THEME="af-magic-custom"
-# ZSH_DISABLE_COMPFIX=true
 
 plugins=(
-    git
-    ugit
-    gitignore
-    # forgit
-    fossil
+    ugit # https://github.com/Bhupesh-V/ugit
+    gitignore  # gi
+    gh
     vi-mode
     command-not-found
     colored-man-pages
-    fd
-    asdf
+    mise
     docker
-    pip
     shrink-path
     zsh-autosuggestions
     fast-syntax-highlighting
-    # fzf
     fzf-tab
-    # zsh-syntax-highlighting
-    # ruby
-    # poetry
-    # pyenv
-    # mix-fast
+    web-search
 )
 
 source $ZSH/oh-my-zsh.sh
 
-###############################################################################
-### User Configuration:
-#
-source $HOME/.aliases.zsh
+if [[ -f ~/.aliases.zsh ]]; then
+    source $HOME/.aliases.zsh # aliases
+fi
+
+if [[ -f ~/.env.zsh ]]; then
+    source $HOME/.env.zsh # secret keys
+fi
+
+fpath+=~/.zfunc
 
 # Bindings:
 bindkey '^ ' autosuggest-accept
+bindkey -s '^n' 'nvim $(fzf)^M'
 
-source $HOME/.asdf/asdf.sh
+# [Cod](https://github.com/dim-an/cod)
 source <(cod init $$ zsh)
 
-autoload -Uz compinit
-zstyle ':completion:*' menu select
-fpath+=~/.zfunc
-
-
-
-# unalias run-help
-autoload run-help
 
 [[ -s "$HOME/.grc/grc.zsh" ]] && source $HOME/.grc/grc.zsh
 
-# Motivation reminder
-# echo "2020 12 31" | awk '{dt=mktime($0 " 00 00 00")-systime(); print "There are " int(dt/86400/7) " weeks left until the year ends. What will you do?";}'
 
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/bitcomplete bit
-
-
-# Haskell ghcup
-# update stack via ghcup tui and not via `stack update`
-# source $HOME/.ghcup/env
-# [ -f "/home/baka/.ghcup/env" ] && source "/home/baka/.ghcup/env" # ghcup-env
-
-
-# Eerie config
-# export EERIEDIR=/home/baka/.eerie
-# export PATH=$PATH:$EERIEDIR/base/bin:$EERIEDIR/activeEnv/bin
-# End Eerie config
-
-
-export PATH="$HOME/.local/bin:$PATH"
-
+export PATH="$HOME/.config/v-analyzer/bin/:$PATH"
 export PATH="$HOME/apps/elixir-ls/release:$PATH"
+
+# nim-lang
+export PATH="$HOME/.nimble/bin:$PATH"
+
 export PATH="$HOME/.r2env/bin:$PATH"
 
 # Flatpak
@@ -81,13 +62,13 @@ export PATH="/var/lib/flatpak/exports/share:$PATH"
 export PATH="$HOME/.local/share/flatpak/exports/share:$PATH"
 
 # Cuda
-export PATH="/usr/local/cuda-11.7/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH"
-export CUDA_HOME="/usr/local/cuda-11.7"
+export PATH="/usr/local/cuda-12.4/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-12.4/lib64:$LD_LIBRARY_PATH"
+export LIBRARY_PATH="/usr/local/cuda-12.4/lib64:$LIBRARY_PATH"
+export CUDA_HOME="/usr/local/cuda-12.4"
 
 # -----------------------------------------------------------------------------
 # PYTHON
-# export PYTHONPATH="${HOME}/.asdf/installs/python/3.11.2/lib/python3.11/site-packages:$PYTHONPATH"
 # export PYTHONPATH="./venv/bin/python"
 # For OpenCV
 # export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python3.10/site-packages"
@@ -116,17 +97,11 @@ export FZF_BASE=$HOME/.fzf/bin/fzf
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='fdfind
-    --type f
-    --strip-cwd-prefix
-    --hidden
-    --follow
-    --exclude .git 
-    --exclude .venv
-    --exclude __pycache__'
+export FZF_DEFAULT_COMMAND='fdfind --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude .venv --exclude __pycache__'
 
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' --height 100%"
+
 # Print tree structure in the preview window
 export FZF_ALT_C_OPTS="--preview 'tree -C {}' --height 100%"
 export FZF_CTRL_R_OPTS="
@@ -137,15 +112,47 @@ export FZF_CTRL_R_OPTS="
     --height 80%"
 
 _fzf_compgen_path() {
-    fdfind --hidden --follow --exclude ".git" --exclude ".venv" . "$1"
+    fdfind --hidden --follow --exclude ".git" . "$1"
 }
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-    fdfind --type d --hidden --follow --exclude ".git" --exclude ".venv" . "$1"
+    fdfind --type d --hidden --follow --exclude ".git" . "$1"
 }
 
+# Change selection to space instead of tab / shift-tab
+export FZF_DEFAULT_OPTS="--bind 'tab:down,shift-tab:up,space:toggle'"
 
+HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000000000
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+
+# export MANPAGER="nvim -c set ft=man -"
+
+# Colors for man pages
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0 282828" #black        #282828
+    echo -en "\e]P8 928374" #darkgrey     #928374
+    echo -en "\e]P1 CC241D" #darkred      #CC241D
+    echo -en "\e]P9 FB4934" #red          #FB4934
+    echo -en "\e]P2 98971A" #darkgreen    #98971A
+    echo -en "\e]PA B8BB26" #green        #B8BB26
+    echo -en "\e]P3 D79921" #brown        #D79921
+    echo -en "\e]PB FABD2F" #yellow       #FABD2F
+    echo -en "\e]P4 458588" #darkblue     #458588
+    echo -en "\e]PC 83A598" #blue         #83A598
+    echo -en "\e]P5 B16286" #darkmagenta  #B16286
+    echo -en "\e]PD D3869B" #magenta      #D3869B
+    echo -en "\e]P6 689D6A" #darkcyan     #689D6A
+    echo -en "\e]PE 8EC07C" #cyan         #8EC07C
+    echo -en "\e]P7 A89984" #lightgrey    #A89984
+    echo -en "\e]PF EBDBB2" #white        #EBDBB2
+    clear # for background artifacting
+fi
 
 ################################################################################
 
@@ -159,37 +166,7 @@ export EDITOR=nvim
 export BROWSER=brave-browser
 export PAGER="bat -p"
 export TERM="xterm-256color"
-
-# `time` output format
 export TIMEFMT=$'\n[job name] %J\n\n\t[0] real:    %E :: %mE :: %uE\n\t[1] user:    %U\n\t[2]  sys:    %S\n\t[3]  cpu:    %P'
-
-
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-
-# export MANPAGER="nvim -c set ft=man -"
-
-# Colors for man pages
-if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P0 282828" #black
-    echo -en "\e]P8 928374" #darkgrey
-    echo -en "\e]P1 CC241D" #darkred
-    echo -en "\e]P9 FB4934" #red
-    echo -en "\e]P2 98971A" #darkgreen
-    echo -en "\e]PA B8BB26" #green
-    echo -en "\e]P3 D79921" #brown
-    echo -en "\e]PB FABD2F" #yellow
-    echo -en "\e]P4 458588" #darkblue
-    echo -en "\e]PC 83A598" #blue
-    echo -en "\e]P5 B16286" #darkmagenta
-    echo -en "\e]PD D3869B" #magenta
-    echo -en "\e]P6 689D6A" #darkcyan
-    echo -en "\e]PE 8EC07C" #cyan
-    echo -en "\e]P7 A89984" #lightgrey
-    echo -en "\e]PF EBDBB2" #white
-    clear #for background artifacting
-fi
-
 
 # support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -200,22 +177,22 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-
-# NNN File Manager
 export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview;p:preview-tui;t:preview-tabbed'
-
-# GPG Related
 export GPG_TTY=$(tty)
 
-# Broot
-source /home/baka/.config/broot/launcher/bash/br
+export GPG_TTY=\$(tty)
+export PSQL_PAGER='pspg -X -s 5'
 
+export QT_QPA_PLATFORMTHEME=qt5ct
 
+# Podman related
+export KIND_EXPERIMENTAL_PROVIDER=podman
 
-# ENV TOKENS
-export TWAUTH=''
-export TWUSER=''
-export TG_TOKEN=''
+# source /home/baka/.config/broot/launcher/bash/br
 
-export TG_TOKEN_MAIN_BOT=''
-export TG_RESOURCE_CHAT_ID=''
+################################################################################
+#
+# Mise related
+eval "$(/home/baka/.local/bin/mise activate zsh)"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+

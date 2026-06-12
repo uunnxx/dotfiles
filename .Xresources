@@ -2,7 +2,7 @@
 URxvt.font: xft:mononoki:size=11
 URxvt.letterSpace: 0
 urxvt*depth: 32
-! URxvt*background: rgba:0000/0000/0200/c800
+URxvt*background: rgba:0000/0000/0200/c800
 
 URxvt*saveLines: 65535
 URxvt.scrollBar:            false
@@ -15,7 +15,7 @@ URxvt.iso14755:             false
 URxvt.perl-ext-common: default,keyboard-select,clipboard
 ! Yankable URLs (no mouse)
 ! M-u is Alt+u (Mod1)
-! 
+!
 URxvt.keysum.M-C: perl:clipboard:copy
 URxvt.keysum.M-V: perl:clipboard:paste
 ! URxvt.iconFile:             /usr/share/icons/elementary/apps/24/terminal.svg

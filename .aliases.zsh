@@ -22,15 +22,20 @@ alias nau='sudo nala update'
 alias naug='sudo nala upgrade'
 alias nauu='sudo nala update && sudo nala upgrade'
 
-alias l='lsd -lAh --group-dirs first'
-alias ll='lsd -lh --group-dirs first'
-alias ls='lsd --group-dirs first'
-alias la='lsd -lah --group-dirs first'
+# alias l='lsd -lAh --group-dirs first'
+# alias ll='lsd -lh --group-dirs first'
+# alias ls='lsd --group-dirs first'
+# alias la='lsd -lah --group-dirs first'
+
+alias l='eza -lb --sort type'
+alias ls='eza --sort type'
+alias ll='eza -lhb --sort type'
+alias la='eza -lahb --sort type'
 
 alias mv='mv -i'
 
 alias rg='rg -S'
-alias -g RG='| rg -S'
+alias -g RG='| rg -S --line-number'
 
 alias mdir="mkdir -pv"
 
@@ -99,18 +104,10 @@ alias II='bpython'
 alias ii='ptipython'
 alias note="jupyter lab"
 
-# alias pipir='pip install -r requirements.txt'
-# alias pipreq='pip freeze > requirements.txt'
-# alias pipu='pip install --upgrade'
-alias pipfi='pip freeze | fzf'
-alias pipf='pip freeze'
-alias pp='poetry'
-# alias pipun='pip uninstall'
-# alias pipi='pip install'
-
 alias venv='python3 -m venv .venv'
 alias vac='source ./.venv/bin/activate'
 alias vad='deactivate'
+
 
 alias rb='ruby'
 alias gentags="ripper-tags -R --exclude=.git"
@@ -136,28 +133,31 @@ alias manj='man --locale=ja'
 
 alias ch="tldr \$(tldr -l | fzf)"
 
-alias fos='fossil'
-alias pl='pijul'
+# alias fos='fossil'
+# alias pl='pijul'
 
 alias lg='lazygit'
 alias ldc='lazydocker'
-alias tis='tig status'
+alias lh='lazyssh'
+alias lj='lazyjournal'
+
+alias tiss='tig status'
 alias til='tig log'
 alias tib='tig blame -C'
 
-
 alias gst='git status'
 
-alias rp='rspec --color'
-alias rpfd='rspec --color --format d'
+# alias rp='rspec --color'
+# alias rpfd='rspec --color --format d'
 
-alias aoeu=asdf
 alias ml='multipass'
 alias dc=docker
-alias pm=podman
+alias pm=podman-remote-static-linux_amd64
 
 alias set_path='export PATH="${PWD}:${PATH}"'
 alias get_path='echo $PATH | tr -s ":" "\n"'
+
+alias copy='xclip -sel c'
 
 ## tools
 alias vi=/usr/bin/vim
@@ -174,15 +174,16 @@ alias batv="fzf --preview 'bat --theme base16 {}'"
 alias rr=ranger
 alias info='info --vi-keys'
 alias grep="grep -i --color=auto"
-alias fd=fdfind
+# alias fd=fdfind
 alias ff="fzf --bind 'enter:become(nvim {})' --header 'Press ENTER to open this file on NVIM' --preview 'bat -n --color=always {}' --height 95% --color header:italic"
 
-alias xpaste="xclip -o"
-alias xcopy="xclip -i"
-alias -g CP='| xclip -i'
+alias P="xclip -o"
+alias C="xclip -i -selection clipboard"
+alias -g CP='| xclip -i -selection clipboard'
 # Usage:
-# ls | xcopy
-# xpaste > input.txt
+# ls | C
+# or: ls CP
+# P > input.txt
 # -----------------------------------------------------------------------------
 
 
