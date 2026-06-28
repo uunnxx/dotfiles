@@ -1,7 +1,7 @@
 # Shortcuts
 alias to='cd'
-alias j="jobs -l"
-alias jj='fg'
+# alias j="jobs -l"
+# alias jj='fg'
 alias rm='remove'
 
 alias tt='tmux'
